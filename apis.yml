@@ -1,0 +1,76 @@
+aid: gocardless
+name: GoCardless
+description: >-
+  GoCardless is a global account-to-account payments platform specializing
+  in pull-based bank debit (UK Bacs, SEPA Direct Debit, ACH, BECS, PAD,
+  Autogiro) and open-banking instant bank payments, used by businesses to
+  collect recurring subscriptions, invoices, and one-off payments directly
+  from customer bank accounts. The GoCardless REST API exposes customers,
+  bank accounts, mandates, payments, payouts, subscriptions, refunds,
+  events, webhooks, and verification flows. Authentication uses Bearer
+  access tokens issued from the dashboard, with separate sandbox and live
+  environments; every request must include a GoCardless-Version header.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Payments
+  - Direct Debit
+  - Bank Debit
+  - Recurring Payments
+  - Subscriptions
+  - SEPA
+  - Bacs
+  - ACH
+  - Open Banking
+  - Fintech
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: gocardless:rest-api
+    name: GoCardless REST API
+    description: >-
+      Versioned REST API for collecting bank debit and open-banking payments
+      worldwide. Resources include customers, customer bank accounts,
+      mandates, payments, payouts, subscriptions, refunds, billing requests,
+      events, and webhook endpoints. Authentication uses Bearer access
+      tokens; a GoCardless-Version header is required on every request.
+      Sandbox available at api-sandbox.gocardless.com.
+    humanURL: https://developer.gocardless.com/api-reference/
+    baseURL: https://api.gocardless.com
+    tags:
+      - Payments
+      - Direct Debit
+      - Subscriptions
+      - Bearer Auth
+      - Versioned API
+    properties:
+      - type: Documentation
+        url: https://developer.gocardless.com/api-reference/
+      - type: OpenAPI
+        url: https://developer.gocardless.com/api-reference/openapi
+      - type: Getting Started
+        url: https://developer.gocardless.com/getting-started/set-up/
+      - type: Sandbox
+        url: https://api-sandbox.gocardless.com
+      - type: Postman Collection
+        url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+
+common:
+  - type: Website
+    url: https://gocardless.com
+  - type: Documentation
+    url: https://developer.gocardless.com
+  - type: Pricing
+    url: https://gocardless.com/pricing/
+  - type: Sign Up
+    url: https://manage.gocardless.com/signup
+  - type: Support
+    url: https://hub.gocardless.com
+  - type: Status
+    url: https://www.gocardless-status.com
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
