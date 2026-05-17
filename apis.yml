@@ -51,7 +51,7 @@ apis:
         url: https://developer.gocardless.com/api-reference/
       - type: OpenAPI
         url: https://developer.gocardless.com/api-reference/openapi
-      - type: Getting Started
+      - type: GettingStarted
         url: https://developer.gocardless.com/getting-started/set-up/
       - type: Sandbox
         url: https://api-sandbox.gocardless.com
@@ -65,11 +65,11 @@ common:
     url: https://developer.gocardless.com
   - type: Pricing
     url: https://gocardless.com/pricing/
-  - type: Sign Up
+  - type: SignUp
     url: https://manage.gocardless.com/signup
   - type: Support
     url: https://hub.gocardless.com
-  - type: Status
+  - type: StatusPage
     url: https://www.gocardless-status.com
 maintainers:
   - FN: Kin Lane
