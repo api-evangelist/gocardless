@@ -59,6 +59,10 @@ apis:
         url: https://www.postman.com/gocardlessapi/gocardless-api/overview
 
 common:
+  - type: GitHubOrganization
+    url: https://github.com/gocardless
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/gocardless
   - type: Website
     url: https://gocardless.com
   - type: Documentation
