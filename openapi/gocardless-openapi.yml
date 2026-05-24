@@ -1,0 +1,370 @@
+openapi: 3.1.0
+info:
+  title: GoCardless REST API
+  version: "2015-07-06"
+  description: |
+    Subset of the public GoCardless REST API for collecting bank debit and
+    open-banking payments. Authentication uses a Bearer access token issued
+    from the dashboard. Every request must include the
+    `GoCardless-Version` header.
+  contact:
+    name: GoCardless Developers
+    url: https://developer.gocardless.com/
+servers:
+  - url: https://api.gocardless.com
+    description: Live
+  - url: https://api-sandbox.gocardless.com
+    description: Sandbox
+security:
+  - bearerAuth: []
+tags:
+  - name: customers
+  - name: customer_bank_accounts
+  - name: mandates
+  - name: payments
+  - name: payouts
+  - name: subscriptions
+  - name: refunds
+  - name: events
+  - name: webhook_endpoints
+  - name: billing_requests
+  - name: billing_request_flows
+  - name: creditors
+  - name: creditor_bank_accounts
+  - name: instalment_schedules
+  - name: payer_authorisations
+  - name: institutions
+  - name: blocks
+paths:
+  /customers:
+    get:
+      tags: [customers]
+      summary: List customers
+      operationId: listCustomers
+      responses: { '200': { description: OK } }
+    post:
+      tags: [customers]
+      summary: Create a customer
+      operationId: createCustomer
+      responses: { '201': { description: Created } }
+  /customers/{id}:
+    get:
+      tags: [customers]
+      summary: Get a customer
+      operationId: getCustomer
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+    put:
+      tags: [customers]
+      summary: Update a customer
+      operationId: updateCustomer
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /customer_bank_accounts:
+    get:
+      tags: [customer_bank_accounts]
+      summary: List customer bank accounts
+      operationId: listCustomerBankAccounts
+      responses: { '200': { description: OK } }
+    post:
+      tags: [customer_bank_accounts]
+      summary: Create a customer bank account
+      operationId: createCustomerBankAccount
+      responses: { '201': { description: Created } }
+  /customer_bank_accounts/{id}:
+    get:
+      tags: [customer_bank_accounts]
+      summary: Get a customer bank account
+      operationId: getCustomerBankAccount
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+    put:
+      tags: [customer_bank_accounts]
+      summary: Update a customer bank account
+      operationId: updateCustomerBankAccount
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /mandates:
+    get:
+      tags: [mandates]
+      summary: List mandates
+      operationId: listMandates
+      responses: { '200': { description: OK } }
+    post:
+      tags: [mandates]
+      summary: Create a mandate
+      operationId: createMandate
+      responses: { '201': { description: Created } }
+  /mandates/{id}:
+    get:
+      tags: [mandates]
+      summary: Get a mandate
+      operationId: getMandate
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+    put:
+      tags: [mandates]
+      summary: Update a mandate
+      operationId: updateMandate
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /mandates/{id}/actions/cancel:
+    post:
+      tags: [mandates]
+      summary: Cancel a mandate
+      operationId: cancelMandate
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /payments:
+    get:
+      tags: [payments]
+      summary: List payments
+      operationId: listPayments
+      responses: { '200': { description: OK } }
+    post:
+      tags: [payments]
+      summary: Create a payment
+      operationId: createPayment
+      responses: { '201': { description: Created } }
+  /payments/{id}:
+    get:
+      tags: [payments]
+      summary: Get a payment
+      operationId: getPayment
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+    put:
+      tags: [payments]
+      summary: Update a payment
+      operationId: updatePayment
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /payments/{id}/actions/cancel:
+    post:
+      tags: [payments]
+      summary: Cancel a payment
+      operationId: cancelPayment
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /payouts:
+    get:
+      tags: [payouts]
+      summary: List payouts
+      operationId: listPayouts
+      responses: { '200': { description: OK } }
+  /payouts/{id}:
+    get:
+      tags: [payouts]
+      summary: Get a payout
+      operationId: getPayout
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /subscriptions:
+    get:
+      tags: [subscriptions]
+      summary: List subscriptions
+      operationId: listSubscriptions
+      responses: { '200': { description: OK } }
+    post:
+      tags: [subscriptions]
+      summary: Create a subscription
+      operationId: createSubscription
+      responses: { '201': { description: Created } }
+  /subscriptions/{id}:
+    get:
+      tags: [subscriptions]
+      summary: Get a subscription
+      operationId: getSubscription
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+    put:
+      tags: [subscriptions]
+      summary: Update a subscription
+      operationId: updateSubscription
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /subscriptions/{id}/actions/cancel:
+    post:
+      tags: [subscriptions]
+      summary: Cancel a subscription
+      operationId: cancelSubscription
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /refunds:
+    get:
+      tags: [refunds]
+      summary: List refunds
+      operationId: listRefunds
+      responses: { '200': { description: OK } }
+    post:
+      tags: [refunds]
+      summary: Create a refund
+      operationId: createRefund
+      responses: { '201': { description: Created } }
+  /refunds/{id}:
+    get:
+      tags: [refunds]
+      summary: Get a refund
+      operationId: getRefund
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+    put:
+      tags: [refunds]
+      summary: Update a refund
+      operationId: updateRefund
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /events:
+    get:
+      tags: [events]
+      summary: List events
+      operationId: listEvents
+      responses: { '200': { description: OK } }
+  /events/{id}:
+    get:
+      tags: [events]
+      summary: Get an event
+      operationId: getEvent
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /billing_requests:
+    get:
+      tags: [billing_requests]
+      summary: List billing requests
+      operationId: listBillingRequests
+      responses: { '200': { description: OK } }
+    post:
+      tags: [billing_requests]
+      summary: Create a billing request
+      operationId: createBillingRequest
+      responses: { '201': { description: Created } }
+  /billing_requests/{id}:
+    get:
+      tags: [billing_requests]
+      summary: Get a billing request
+      operationId: getBillingRequest
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /billing_request_flows:
+    post:
+      tags: [billing_request_flows]
+      summary: Create a billing request flow (hosted authorization link)
+      operationId: createBillingRequestFlow
+      responses: { '201': { description: Created } }
+  /billing_request_flows/{id}:
+    get:
+      tags: [billing_request_flows]
+      summary: Get a billing request flow
+      operationId: getBillingRequestFlow
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /creditors:
+    get:
+      tags: [creditors]
+      summary: List creditors
+      operationId: listCreditors
+      responses: { '200': { description: OK } }
+  /creditors/{id}:
+    get:
+      tags: [creditors]
+      summary: Get a creditor
+      operationId: getCreditor
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /creditor_bank_accounts:
+    get:
+      tags: [creditor_bank_accounts]
+      summary: List creditor bank accounts
+      operationId: listCreditorBankAccounts
+      responses: { '200': { description: OK } }
+    post:
+      tags: [creditor_bank_accounts]
+      summary: Create a creditor bank account
+      operationId: createCreditorBankAccount
+      responses: { '201': { description: Created } }
+  /instalment_schedules:
+    get:
+      tags: [instalment_schedules]
+      summary: List instalment schedules
+      operationId: listInstalmentSchedules
+      responses: { '200': { description: OK } }
+    post:
+      tags: [instalment_schedules]
+      summary: Create an instalment schedule
+      operationId: createInstalmentSchedule
+      responses: { '201': { description: Created } }
+  /instalment_schedules/{id}:
+    get:
+      tags: [instalment_schedules]
+      summary: Get an instalment schedule
+      operationId: getInstalmentSchedule
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /payer_authorisations:
+    post:
+      tags: [payer_authorisations]
+      summary: Create a payer authorisation
+      operationId: createPayerAuthorisation
+      responses: { '201': { description: Created } }
+  /payer_authorisations/{id}:
+    get:
+      tags: [payer_authorisations]
+      summary: Get a payer authorisation
+      operationId: getPayerAuthorisation
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+  /institutions:
+    get:
+      tags: [institutions]
+      summary: List open-banking institutions
+      operationId: listInstitutions
+      responses: { '200': { description: OK } }
+  /blocks:
+    post:
+      tags: [blocks]
+      summary: Create a block (anti-fraud rule)
+      operationId: createBlock
+      responses: { '201': { description: Created } }
+  /blocks/{id}:
+    get:
+      tags: [blocks]
+      summary: Get a block
+      operationId: getBlock
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses: { '200': { description: OK } }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: GoCardless access token from the dashboard
+  parameters:
+    GoCardlessVersion:
+      name: GoCardless-Version
+      in: header
+      required: true
+      description: API version date (e.g. `2015-07-06`)
+      schema: { type: string }
