@@ -75,6 +75,8 @@ common:
     url: https://hub.gocardless.com
   - type: StatusPage
     url: https://www.gocardless-status.com
+  - type: LLMsTxt
+    url: https://developer.gocardless.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
