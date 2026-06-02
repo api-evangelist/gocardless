@@ -26,7 +26,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-05-11'
+modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
   - aid: gocardless:rest-api
@@ -57,6 +57,8 @@ apis:
         url: https://api-sandbox.gocardless.com
       - type: Postman Collection
         url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+      - type: AsyncAPI
+        url: https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 
 common:
   - type: GitHubOrganization

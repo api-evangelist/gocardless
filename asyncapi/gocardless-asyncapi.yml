@@ -1,0 +1,913 @@
+asyncapi: '2.6.0'
+info:
+  title: GoCardless Webhooks
+  version: '1.1'
+  description: |
+    AsyncAPI description of the GoCardless webhook surface. GoCardless POSTs
+    a JSON envelope containing one or more events (up to 250 per request) to
+    each subscribed `webhook_endpoint`. Every request includes a
+    `Webhook-Signature` HTTP header carrying a hex-encoded HMAC-SHA256
+    digest computed over the raw request body using the webhook endpoint's
+    secret. Recipients should recompute the signature and compare in
+    constant time before processing.
+
+    Resource types covered (each with its documented `action` enum):
+    `billing_requests`, `creditors`, `customers`, `exports`,
+    `instalment_schedules`, `mandates`, `outbound_payments`,
+    `payer_authorisations`, `payments`, `payment_account_transactions`,
+    `payouts`, `refunds`, `scheme_identifiers`, `subscriptions`.
+
+    Source: https://developer.gocardless.com/api-reference/ (Webhooks
+    Overview and Event Types sections) and
+    https://developer.gocardless.com/getting-started/stay-up-to-date-with-webhooks-v2.
+  contact:
+    name: GoCardless Developers
+    url: https://developer.gocardless.com/
+  license:
+    name: Proprietary
+    url: https://gocardless.com/legal/
+
+defaultContentType: application/json
+
+servers:
+  subscriber:
+    url: '{webhook_endpoint_url}'
+    protocol: https
+    description: |
+      The HTTPS endpoint registered by the merchant or partner under
+      `/webhook_endpoints` that GoCardless POSTs webhook envelopes to.
+    variables:
+      webhook_endpoint_url:
+        description: The fully-qualified URL configured on the webhook endpoint.
+        default: https://example.com/gocardless/webhooks
+
+channels:
+  /:
+    description: |
+      Subscriber endpoint that receives GoCardless webhook deliveries. A
+      single delivery contains one or more event objects in the `events`
+      array (max 250). The same channel is reused for every resource type
+      and action - dispatch by `resource_type` + `action` in the receiver.
+    bindings:
+      http:
+        type: request
+        method: POST
+    publish:
+      operationId: receiveWebhook
+      summary: Receive a webhook delivery from GoCardless
+      description: |
+        GoCardless POSTs to the registered URL with `Content-Type:
+        application/json`, `User-Agent: gocardless-webhook-service/1.1`,
+        and a `Webhook-Signature` header. Subscribers should respond with
+        2xx after verifying the signature; non-2xx responses are retried.
+      bindings:
+        http:
+          type: request
+          method: POST
+      message:
+        oneOf:
+          - $ref: '#/components/messages/BillingRequestEvent'
+          - $ref: '#/components/messages/CreditorEvent'
+          - $ref: '#/components/messages/CustomerEvent'
+          - $ref: '#/components/messages/ExportEvent'
+          - $ref: '#/components/messages/InstalmentScheduleEvent'
+          - $ref: '#/components/messages/MandateEvent'
+          - $ref: '#/components/messages/OutboundPaymentEvent'
+          - $ref: '#/components/messages/PayerAuthorisationEvent'
+          - $ref: '#/components/messages/PaymentEvent'
+          - $ref: '#/components/messages/PaymentAccountTransactionEvent'
+          - $ref: '#/components/messages/PayoutEvent'
+          - $ref: '#/components/messages/RefundEvent'
+          - $ref: '#/components/messages/SchemeIdentifierEvent'
+          - $ref: '#/components/messages/SubscriptionEvent'
+
+components:
+  messageTraits:
+    GoCardlessWebhookHeaders:
+      headers:
+        type: object
+        required:
+          - Webhook-Signature
+          - Content-Type
+        properties:
+          Webhook-Signature:
+            type: string
+            description: |
+              Hex-encoded HMAC-SHA256 of the raw POST body, keyed by the
+              webhook endpoint's secret. Recipients must recompute and
+              compare in constant time before trusting the payload. A
+              mismatch should be answered with HTTP 498 Invalid Token per
+              the GoCardless documentation.
+            example: 9f3c2d59f0b4a04a8a2f9b14b35e2c6f2dca8d8ec64f3b3a8a8b85ffd3a59c5e
+          Content-Type:
+            type: string
+            const: application/json
+          User-Agent:
+            type: string
+            description: User-Agent sent by GoCardless when delivering webhooks.
+            example: gocardless-webhook-service/1.1
+
+  messages:
+    BillingRequestEvent:
+      name: BillingRequestEvent
+      title: Billing Request webhook event
+      summary: Event(s) for the `billing_requests` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/BillingRequestEnvelope'
+
+    CreditorEvent:
+      name: CreditorEvent
+      title: Creditor webhook event
+      summary: Event(s) for the `creditors` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/CreditorEnvelope'
+
+    CustomerEvent:
+      name: CustomerEvent
+      title: Customer webhook event
+      summary: Event(s) for the `customers` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/CustomerEnvelope'
+
+    ExportEvent:
+      name: ExportEvent
+      title: Export webhook event
+      summary: Event(s) for the `exports` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/ExportEnvelope'
+
+    InstalmentScheduleEvent:
+      name: InstalmentScheduleEvent
+      title: Instalment Schedule webhook event
+      summary: Event(s) for the `instalment_schedules` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/InstalmentScheduleEnvelope'
+
+    MandateEvent:
+      name: MandateEvent
+      title: Mandate webhook event
+      summary: Event(s) for the `mandates` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/MandateEnvelope'
+
+    OutboundPaymentEvent:
+      name: OutboundPaymentEvent
+      title: Outbound Payment webhook event
+      summary: Event(s) for the `outbound_payments` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/OutboundPaymentEnvelope'
+
+    PayerAuthorisationEvent:
+      name: PayerAuthorisationEvent
+      title: Payer Authorisation webhook event
+      summary: Event(s) for the `payer_authorisations` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/PayerAuthorisationEnvelope'
+
+    PaymentEvent:
+      name: PaymentEvent
+      title: Payment webhook event
+      summary: Event(s) for the `payments` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/PaymentEnvelope'
+
+    PaymentAccountTransactionEvent:
+      name: PaymentAccountTransactionEvent
+      title: Payment Account Transaction webhook event
+      summary: Event(s) for the `payment_account_transaction` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/PaymentAccountTransactionEnvelope'
+
+    PayoutEvent:
+      name: PayoutEvent
+      title: Payout webhook event
+      summary: Event(s) for the `payouts` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/PayoutEnvelope'
+
+    RefundEvent:
+      name: RefundEvent
+      title: Refund webhook event
+      summary: Event(s) for the `refunds` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/RefundEnvelope'
+
+    SchemeIdentifierEvent:
+      name: SchemeIdentifierEvent
+      title: Scheme Identifier webhook event
+      summary: Event(s) for the `scheme_identifiers` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/SchemeIdentifierEnvelope'
+
+    SubscriptionEvent:
+      name: SubscriptionEvent
+      title: Subscription webhook event
+      summary: Event(s) for the `subscriptions` resource type.
+      contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/GoCardlessWebhookHeaders'
+      payload:
+        $ref: '#/components/schemas/SubscriptionEnvelope'
+
+  schemas:
+    EventDetails:
+      type: object
+      description: |
+        Context describing why the event occurred. The set of valid `cause`
+        values depends on the resource type and action; the API reference
+        documents the full mapping.
+      properties:
+        origin:
+          type: string
+          description: Where the event originated.
+          enum:
+            - gocardless
+            - api
+            - bank
+            - customer
+            - payer
+        cause:
+          type: string
+          description: |
+            Machine-readable reason for the event (e.g. `payment_failed`,
+            `mandate_cancelled`, `bank_account_closed`).
+        description:
+          type: string
+          description: Human-readable description of the event.
+        scheme:
+          type: string
+          description: |
+            Direct Debit scheme the event relates to, when applicable
+            (e.g. `bacs`, `sepa_core`, `ach`, `autogiro`, `becs`,
+            `becs_nz`, `betalingsservice`, `pad`).
+        reason_code:
+          type: string
+          description: |
+            Scheme-specific reason code that triggered the event, when
+            applicable (e.g. `ADDACS-1`, `AC04`, `ACH_RETURN-R01`).
+        property:
+          type: string
+          description: |
+            Property of the affected resource that changed, on
+            `creditors.updated` events (e.g. `logo_url`,
+            `verification_status`).
+      additionalProperties: true
+
+    EventBase:
+      type: object
+      required:
+        - id
+        - created_at
+        - resource_type
+        - action
+        - details
+        - links
+      properties:
+        id:
+          type: string
+          description: Unique event identifier (e.g. `EV123`).
+          example: EV0123456789AB
+        created_at:
+          type: string
+          format: date-time
+          description: ISO 8601 timestamp the event was created.
+        resource_type:
+          type: string
+          description: The kind of resource the event relates to.
+        action:
+          type: string
+          description: What happened to the resource.
+        details:
+          $ref: '#/components/schemas/EventDetails'
+        metadata:
+          type: object
+          description: Up to 3 user-supplied key/value pairs.
+          additionalProperties:
+            type: string
+        resource_metadata:
+          type: object
+          description: Metadata copied from the affected resource.
+          additionalProperties:
+            type: string
+        links:
+          type: object
+          description: References to related resources.
+          additionalProperties:
+            type: string
+
+    BillingRequestEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: billing_requests
+            action:
+              type: string
+              description: Documented `billing_requests` event actions.
+              enum:
+                - created
+                - flow_created
+                - flow_visited
+                - flow_exited
+                - collect_customer_details
+                - select_institution
+                - collect_bank_account
+                - payer_details_confirmed
+                - bank_authorisation_visited
+                - bank_authorisation_authorised
+                - bank_authorisation_denied
+                - bank_authorisation_expired
+                - bank_authorisation_failed
+                - fulfilled
+                - cancelled
+                - choose_currency
+                - collect_amount
+                - payer_geo_blocked
+                - failed
+            links:
+              type: object
+              properties:
+                billing_request:
+                  type: string
+                organisation:
+                  type: string
+              additionalProperties:
+                type: string
+
+    CreditorEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: creditors
+            action:
+              type: string
+              description: Documented `creditors` event actions.
+              enum:
+                - updated
+                - new_payout_currency_added
+                - account_auto_frozen
+                - account_auto_frozen_reverted
+                - bounced_payout
+            links:
+              type: object
+              properties:
+                creditor:
+                  type: string
+              additionalProperties:
+                type: string
+
+    CustomerEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              enum:
+                - customers
+                - customer
+            action:
+              type: string
+              description: Documented `customer` compliance event actions.
+              enum:
+                - approved
+                - under_review
+                - request_for_information_required
+            links:
+              type: object
+              properties:
+                customer:
+                  type: string
+              additionalProperties:
+                type: string
+
+    ExportEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: exports
+            action:
+              type: string
+              description: Documented `exports` event actions.
+              enum:
+                - started
+                - completed
+                - failed
+            links:
+              type: object
+              properties:
+                export:
+                  type: string
+              additionalProperties:
+                type: string
+
+    InstalmentScheduleEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: instalment_schedules
+            action:
+              type: string
+              description: Documented `instalment_schedules` event actions.
+              enum:
+                - created
+                - creation_failed
+                - cancelled
+                - errored
+                - resumed
+                - completed
+            links:
+              type: object
+              properties:
+                instalment_schedule:
+                  type: string
+                payment:
+                  type: string
+              additionalProperties:
+                type: string
+
+    MandateEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: mandates
+            action:
+              type: string
+              description: Documented `mandates` event actions.
+              enum:
+                - created
+                - customer_approval_granted
+                - customer_approval_skipped
+                - active
+                - cancelled
+                - failed
+                - transferred
+                - expired
+                - submitted
+                - resubmission_requested
+                - reinstated
+                - replaced
+                - consumed
+                - blocked
+            links:
+              type: object
+              properties:
+                mandate:
+                  type: string
+                previous_customer_bank_account:
+                  type: string
+                new_customer_bank_account:
+                  type: string
+                new_mandate:
+                  type: string
+                organisation:
+                  type: string
+              additionalProperties:
+                type: string
+
+    OutboundPaymentEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: outbound_payments
+            action:
+              type: string
+              description: Documented `outbound_payments` event actions.
+              enum:
+                - created
+                - cancelled
+                - failed
+                - set_to_pending_approval
+                - set_to_executing
+                - executed
+            links:
+              type: object
+              properties:
+                outbound_payment:
+                  type: string
+              additionalProperties:
+                type: string
+
+    PayerAuthorisationEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: payer_authorisations
+            action:
+              type: string
+              description: Documented `payer_authorisations` event actions.
+              enum:
+                - completed
+                - failed
+            links:
+              type: object
+              properties:
+                payer_authorisation:
+                  type: string
+                customer:
+                  type: string
+                customer_bank_account:
+                  type: string
+                mandate:
+                  type: string
+              additionalProperties:
+                type: string
+
+    PaymentEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: payments
+            action:
+              type: string
+              description: Documented `payments` event actions.
+              enum:
+                - created
+                - customer_approval_granted
+                - customer_approval_denied
+                - submitted
+                - confirmed
+                - chargeback_cancelled
+                - paid_out
+                - late_failure_settled
+                - chargeback_settled
+                - surcharge_fee_debited
+                - failed
+                - charged_back
+                - cancelled
+                - resubmission_requested
+                - sds_settlement_delayed
+            will_attempt_retry:
+              type: boolean
+              description: |
+                Present on `failed` events. When `true`, GoCardless will
+                automatically retry the payment via Success+.
+            links:
+              type: object
+              properties:
+                payment:
+                  type: string
+                mandate:
+                  type: string
+                subscription:
+                  type: string
+                instalment_schedule:
+                  type: string
+                payout:
+                  type: string
+                refund:
+                  type: string
+                previous_customer_bank_account:
+                  type: string
+                new_customer_bank_account:
+                  type: string
+                organisation:
+                  type: string
+              additionalProperties:
+                type: string
+
+    PaymentAccountTransactionEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: payment_account_transaction
+            action:
+              type: string
+              description: Documented `payment_account_transaction` event actions.
+              enum:
+                - created
+            links:
+              type: object
+              properties:
+                payment_account_transaction:
+                  type: string
+              additionalProperties:
+                type: string
+
+    PayoutEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: payouts
+            action:
+              type: string
+              description: Documented `payouts` event actions.
+              enum:
+                - paid
+                - fx_rate_confirmed
+                - tax_exchange_rates_confirmed
+            links:
+              type: object
+              properties:
+                payout:
+                  type: string
+              additionalProperties:
+                type: string
+
+    RefundEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: refunds
+            action:
+              type: string
+              description: Documented `refunds` event actions.
+              enum:
+                - created
+                - failed
+                - paid
+                - refund_settled
+                - funds_returned
+            links:
+              type: object
+              properties:
+                refund:
+                  type: string
+                payment:
+                  type: string
+              additionalProperties:
+                type: string
+
+    SchemeIdentifierEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: scheme_identifiers
+            action:
+              type: string
+              description: Documented `scheme_identifiers` event actions.
+              enum:
+                - activated
+            links:
+              type: object
+              properties:
+                scheme_identifier:
+                  type: string
+              additionalProperties:
+                type: string
+
+    SubscriptionEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          properties:
+            resource_type:
+              type: string
+              const: subscriptions
+            action:
+              type: string
+              description: Documented `subscriptions` event actions.
+              enum:
+                - created
+                - customer_approval_granted
+                - customer_approval_denied
+                - amended
+                - payment_created
+                - cancelled
+                - finished
+                - paused
+                - resumed
+                - scheduled_pause
+                - scheduled_pause_cancelled
+                - scheduled_resume
+            links:
+              type: object
+              properties:
+                subscription:
+                  type: string
+                payment:
+                  type: string
+                mandate:
+                  type: string
+                organisation:
+                  type: string
+              additionalProperties:
+                type: string
+
+    BillingRequestEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/BillingRequestEvent'
+
+    CreditorEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/CreditorEvent'
+
+    CustomerEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/CustomerEvent'
+
+    ExportEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/ExportEvent'
+
+    InstalmentScheduleEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/InstalmentScheduleEvent'
+
+    MandateEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/MandateEvent'
+
+    OutboundPaymentEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/OutboundPaymentEvent'
+
+    PayerAuthorisationEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/PayerAuthorisationEvent'
+
+    PaymentEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/PaymentEvent'
+
+    PaymentAccountTransactionEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/PaymentAccountTransactionEvent'
+
+    PayoutEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/PayoutEvent'
+
+    RefundEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/RefundEvent'
+
+    SchemeIdentifierEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/SchemeIdentifierEvent'
+
+    SubscriptionEnvelope:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/SubscriptionEvent'
