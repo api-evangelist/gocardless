@@ -1,0 +1,833 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoCardless REST API",
+    "version": "2015-07-06"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "customers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List customers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/customers"
+          },
+          "docs": "List customers"
+        },
+        {
+          "info": {
+            "name": "Create a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/customers"
+          },
+          "docs": "Create a customer"
+        },
+        {
+          "info": {
+            "name": "Get a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/customers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a customer"
+        },
+        {
+          "info": {
+            "name": "Update a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gocardless.com/customers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a customer"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "customer_bank_accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List customer bank accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/customer_bank_accounts"
+          },
+          "docs": "List customer bank accounts"
+        },
+        {
+          "info": {
+            "name": "Create a customer bank account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/customer_bank_accounts"
+          },
+          "docs": "Create a customer bank account"
+        },
+        {
+          "info": {
+            "name": "Get a customer bank account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/customer_bank_accounts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a customer bank account"
+        },
+        {
+          "info": {
+            "name": "Update a customer bank account",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gocardless.com/customer_bank_accounts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a customer bank account"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "mandates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List mandates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/mandates"
+          },
+          "docs": "List mandates"
+        },
+        {
+          "info": {
+            "name": "Create a mandate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/mandates"
+          },
+          "docs": "Create a mandate"
+        },
+        {
+          "info": {
+            "name": "Get a mandate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/mandates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a mandate"
+        },
+        {
+          "info": {
+            "name": "Update a mandate",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gocardless.com/mandates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a mandate"
+        },
+        {
+          "info": {
+            "name": "Cancel a mandate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/mandates/:id/actions/cancel",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a mandate"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/payments"
+          },
+          "docs": "List payments"
+        },
+        {
+          "info": {
+            "name": "Create a payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/payments"
+          },
+          "docs": "Create a payment"
+        },
+        {
+          "info": {
+            "name": "Get a payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/payments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a payment"
+        },
+        {
+          "info": {
+            "name": "Update a payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gocardless.com/payments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a payment"
+        },
+        {
+          "info": {
+            "name": "Cancel a payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/payments/:id/actions/cancel",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a payment"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "payouts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List payouts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/payouts"
+          },
+          "docs": "List payouts"
+        },
+        {
+          "info": {
+            "name": "Get a payout",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/payouts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a payout"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List subscriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/subscriptions"
+          },
+          "docs": "List subscriptions"
+        },
+        {
+          "info": {
+            "name": "Create a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/subscriptions"
+          },
+          "docs": "Create a subscription"
+        },
+        {
+          "info": {
+            "name": "Get a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/subscriptions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a subscription"
+        },
+        {
+          "info": {
+            "name": "Update a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gocardless.com/subscriptions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a subscription"
+        },
+        {
+          "info": {
+            "name": "Cancel a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/subscriptions/:id/actions/cancel",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a subscription"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "refunds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List refunds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/refunds"
+          },
+          "docs": "List refunds"
+        },
+        {
+          "info": {
+            "name": "Create a refund",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/refunds"
+          },
+          "docs": "Create a refund"
+        },
+        {
+          "info": {
+            "name": "Get a refund",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/refunds/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a refund"
+        },
+        {
+          "info": {
+            "name": "Update a refund",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gocardless.com/refunds/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a refund"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/events"
+          },
+          "docs": "List events"
+        },
+        {
+          "info": {
+            "name": "Get an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/events/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an event"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "billing_requests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List billing requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/billing_requests"
+          },
+          "docs": "List billing requests"
+        },
+        {
+          "info": {
+            "name": "Create a billing request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/billing_requests"
+          },
+          "docs": "Create a billing request"
+        },
+        {
+          "info": {
+            "name": "Get a billing request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/billing_requests/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a billing request"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "billing_request_flows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a billing request flow (hosted authorization link)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/billing_request_flows"
+          },
+          "docs": "Create a billing request flow (hosted authorization link)"
+        },
+        {
+          "info": {
+            "name": "Get a billing request flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/billing_request_flows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a billing request flow"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "creditors",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List creditors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/creditors"
+          },
+          "docs": "List creditors"
+        },
+        {
+          "info": {
+            "name": "Get a creditor",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/creditors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a creditor"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "creditor_bank_accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List creditor bank accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/creditor_bank_accounts"
+          },
+          "docs": "List creditor bank accounts"
+        },
+        {
+          "info": {
+            "name": "Create a creditor bank account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/creditor_bank_accounts"
+          },
+          "docs": "Create a creditor bank account"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "instalment_schedules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List instalment schedules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/instalment_schedules"
+          },
+          "docs": "List instalment schedules"
+        },
+        {
+          "info": {
+            "name": "Create an instalment schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/instalment_schedules"
+          },
+          "docs": "Create an instalment schedule"
+        },
+        {
+          "info": {
+            "name": "Get an instalment schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/instalment_schedules/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an instalment schedule"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "payer_authorisations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a payer authorisation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/payer_authorisations"
+          },
+          "docs": "Create a payer authorisation"
+        },
+        {
+          "info": {
+            "name": "Get a payer authorisation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/payer_authorisations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a payer authorisation"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "institutions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List open-banking institutions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/institutions"
+          },
+          "docs": "List open-banking institutions"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "blocks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a block (anti-fraud rule)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/blocks"
+          },
+          "docs": "Create a block (anti-fraud rule)"
+        },
+        {
+          "info": {
+            "name": "Get a block",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/blocks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a block"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
