@@ -11,7 +11,7 @@ description: >-
   access tokens issued from the dashboard, with separate sandbox and live
   environments; every request must include a GoCardless-Version header.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Payments
   - Direct Debit
