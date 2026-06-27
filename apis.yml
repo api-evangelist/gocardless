@@ -55,7 +55,7 @@ apis:
         url: https://developer.gocardless.com/getting-started/set-up/
       - type: Sandbox
         url: https://api-sandbox.gocardless.com
-      - type: Postman Collection
+      - type: PostmanCollection
         url: https://www.postman.com/gocardlessapi/gocardless-api/overview
       - type: AsyncAPI
         url: https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
@@ -71,13 +71,13 @@ common:
     url: https://developer.gocardless.com
   - type: Pricing
     url: https://gocardless.com/pricing/
-  - type: SignUp
+  - type: Signup
     url: https://manage.gocardless.com/signup
   - type: Support
     url: https://hub.gocardless.com
   - type: StatusPage
     url: https://www.gocardless-status.com
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developer.gocardless.com/llms.txt
 maintainers:
   - FN: Kin Lane
