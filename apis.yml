@@ -61,6 +61,12 @@ apis:
         url: https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 
 common:
+  - type: VulnerabilityDisclosure
+    url: security/gocardless-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/gocardless-domain-security.yml
+  - type: Authentication
+    url: authentication/gocardless-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/gocardless
   - type: LinkedIn
@@ -79,6 +85,8 @@ common:
     url: https://www.gocardless-status.com
   - type: LlmsText
     url: https://developer.gocardless.com/llms.txt
+  - url: https://gocardless.com/blog/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
