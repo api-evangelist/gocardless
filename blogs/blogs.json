@@ -1,0 +1,14 @@
+{
+  "repo": "gocardless",
+  "feeds": [
+    {
+      "source": "https://gocardless.com/blog/",
+      "feed_url": "https://gocardless.com/content-platform/rss/resources.xml",
+      "title": "",
+      "saved": 1,
+      "method": "discovered"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 30
+}
