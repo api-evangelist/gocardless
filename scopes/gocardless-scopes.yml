@@ -1,0 +1,32 @@
+generated: '2026-07-14'
+method: searched
+source: https://developer.gocardless.com/partners/connecting-your-users/
+docs: https://developer.gocardless.com/partners/connecting-your-users/
+description: >-
+  GoCardless's OAuth surface. The core REST API authenticates with a Bearer
+  access token issued from the dashboard (no OAuth), so the OpenAPI
+  securitySchemes carry no oauth2 scopes and the derive pass finds none. OAuth
+  is used by Partner apps ("Connect with GoCardless") so an integrator can act
+  on behalf of a merchant's GoCardless account. This is the searched fill
+  capturing that Partner OAuth scheme and its single documented scope.
+schemes:
+  - name: GoCardless Partner OAuth
+    type: oauth2
+    grant_types: [authorization_code]
+    authorizationUrl: https://connect.gocardless.com/oauth/authorize
+    tokenUrl: https://connect.gocardless.com/oauth/access_token
+    sandbox_authorizationUrl: https://connect-sandbox.gocardless.com/oauth/authorize
+    response_type: code
+    token_use: 'Authorization: Bearer <access_token> on subsequent API calls'
+    docs: https://developer.gocardless.com/partners/connecting-your-users/
+    notes: >-
+      Partner apps register a client_id/client_secret and a fixed redirect_uri
+      (must match exactly). The merchant completes the flow and is redirected
+      back with an authorization code, which the partner swaps for an access
+      token scoped to that merchant's account. The same flow exists in sandbox
+      via connect-sandbox.gocardless.com.
+scopes:
+  - scope: read_write
+    description: Full read and write access to the connected merchant's GoCardless account (the scope requested by Partner apps).
+    schemes: [GoCardless Partner OAuth]
+    default: true

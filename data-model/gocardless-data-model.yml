@@ -1,0 +1,65 @@
+generated: '2026-07-14'
+method: derived
+source: >-
+  Derived from openapi/gocardless-openapi.yml (resource tags and the
+  /resource/{id} path structure) and the GoCardless object reference
+  (developer.gocardless.com/api-reference). Relationships come from the
+  links.<name> reference fields GoCardless attaches to every resource. Captures
+  the core entity-relationship graph behind the bank-debit / open-banking
+  payments domain. Id prefixes are the human-readable resource prefixes
+  GoCardless assigns (e.g. CU… customers, MD… mandates, PM… payments).
+docs: https://developer.gocardless.com/api-reference
+notation: >-
+  relationships use has_one / has_many / belongs_to with the links.<field>
+  reference name; direction is from the resource that owns the reference.
+
+entities:
+  - {name: Customer, id_prefix: CU, domain: core, description: A person or business you collect payments from.}
+  - {name: CustomerBankAccount, id_prefix: BA, domain: core, description: 'A bank account belonging to a customer, debited under a mandate.'}
+  - {name: Mandate, id_prefix: MD, domain: mandates, description: Authorisation from a customer to debit their bank account under a scheme.}
+  - {name: Payment, id_prefix: PM, domain: payments, description: A single collection against a mandate.}
+  - {name: Subscription, id_prefix: SB, domain: payments, description: A recurring schedule that creates payments against a mandate.}
+  - {name: InstalmentSchedule, id_prefix: IS, domain: payments, description: A fixed series of payments (instalments) against a mandate.}
+  - {name: Refund, id_prefix: RF, domain: payments, description: A return of funds against a confirmed payment (or mandate for SEPA).}
+  - {name: Payout, id_prefix: PO, domain: money-movement, description: Aggregated transfer of collected funds from GoCardless to the creditor's bank account.}
+  - {name: Creditor, id_prefix: CR, domain: money-movement, description: The merchant entity that collects payments; owns creditor bank accounts.}
+  - {name: CreditorBankAccount, id_prefix: BA, domain: money-movement, description: A bank account of a creditor that payouts are sent to.}
+  - {name: BillingRequest, id_prefix: BRQ, domain: billing-requests, description: 'A unified request to set up a mandate and/or take a payment (Instant Bank Pay, VRP, PayTo).'}
+  - {name: BillingRequestFlow, id_prefix: BRF, domain: billing-requests, description: A hosted/Drop-in authorisation link that completes a billing request.}
+  - {name: PayerAuthorisation, id_prefix: PA, domain: mandates, description: A staged customer + bank account + mandate created from payer-entered details.}
+  - {name: Block, id_prefix: BLC, domain: anti-fraud, description: A creditor-level rule that blocks matching payers/bank accounts.}
+  - {name: Institution, domain: open-banking, description: A bank/institution selectable in open-banking (Instant Bank Pay) flows.}
+  - {name: Event, id_prefix: EV, domain: platform, description: A record of something that happened to a resource; delivered via webhooks.}
+
+relationships:
+  - {from: CustomerBankAccount, to: Customer, kind: belongs_to, via: customer}
+  - {from: Customer, to: CustomerBankAccount, kind: has_many, via: customer}
+  - {from: Customer, to: Mandate, kind: has_many, via: customer}
+  - {from: Mandate, to: CustomerBankAccount, kind: belongs_to, via: customer_bank_account}
+  - {from: Mandate, to: Creditor, kind: belongs_to, via: creditor}
+  - {from: Payment, to: Mandate, kind: belongs_to, via: mandate}
+  - {from: Payment, to: Subscription, kind: belongs_to, via: subscription}
+  - {from: Payment, to: Payout, kind: belongs_to, via: payout}
+  - {from: Subscription, to: Mandate, kind: belongs_to, via: mandate}
+  - {from: Subscription, to: Payment, kind: has_many, via: subscription}
+  - {from: InstalmentSchedule, to: Mandate, kind: belongs_to, via: mandate}
+  - {from: InstalmentSchedule, to: Payment, kind: has_many, via: instalment_schedule}
+  - {from: Refund, to: Payment, kind: belongs_to, via: payment}
+  - {from: Refund, to: Mandate, kind: belongs_to, via: mandate}
+  - {from: Payout, to: Creditor, kind: belongs_to, via: creditor}
+  - {from: Payout, to: CreditorBankAccount, kind: belongs_to, via: creditor_bank_account}
+  - {from: CreditorBankAccount, to: Creditor, kind: belongs_to, via: creditor}
+  - {from: BillingRequest, to: Customer, kind: belongs_to, via: customer}
+  - {from: BillingRequest, to: Mandate, kind: has_one, via: mandate_request_mandate}
+  - {from: BillingRequest, to: Payment, kind: has_one, via: payment_request_payment}
+  - {from: BillingRequestFlow, to: BillingRequest, kind: belongs_to, via: billing_request}
+  - {from: PayerAuthorisation, to: Customer, kind: has_one, via: customer}
+  - {from: PayerAuthorisation, to: CustomerBankAccount, kind: has_one, via: customer_bank_account}
+  - {from: PayerAuthorisation, to: Mandate, kind: has_one, via: mandate}
+  - {from: Event, to: Payment, kind: belongs_to, via: payment}
+  - {from: Event, to: Mandate, kind: belongs_to, via: mandate}
+  - {from: Event, to: Refund, kind: belongs_to, via: refund}
+  - {from: Event, to: Subscription, kind: belongs_to, via: subscription}
+  - {from: Event, to: Payout, kind: belongs_to, via: payout}
+
+interchange_hubs: [Mandate, Customer, Creditor]

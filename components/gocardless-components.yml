@@ -1,0 +1,50 @@
+generated: '2026-07-14'
+method: searched
+source: https://developer.gocardless.com/integration-types/javascript-drop-in-flow/
+description: >-
+  GoCardless's client-side / embeddable UI surface — the Drop-in, a JavaScript
+  modal that runs a Billing Request Flow inside the merchant's own website so
+  customers stay on-site without a full redirect. Distinct from the hosted
+  (fully redirected) payment pages and from the server-side SDK client
+  libraries. Loaded from the GoCardless-hosted initialise script; React
+  bindings are shipped as @gocardless/react-dropin.
+docs:
+  - https://developer.gocardless.com/integration-types/javascript-drop-in-flow/
+  - https://developer.gocardless.com/getting-started/billing-requests/using-dropin/
+  - https://github.com/gocardless/react-dropin
+
+libraries:
+  - {name: dropin initialise script, url: 'https://pay.gocardless.com/billing/static/dropin/v2/initialise.js', purpose: Loads GoCardlessDropin; include on each page that mounts the Drop-in.}
+  - {name: "@gocardless/react-dropin", purpose: 'React bindings + TypeScript definitions for the Drop-in (useGoCardlessDropin hook), install via npm/yarn.'}
+
+families:
+  dropin:
+    description: >-
+      A JavaScript modal that initialises a Billing Request Flow from within the
+      merchant's site. Use when you already have a frontend and want customers
+      to stay on-site, avoiding site-to-site redirects.
+    api:
+      factory: GoCardlessDropin.create({ billingRequestFlowID, environment, onSuccess, onExit })
+      params:
+        - {name: billingRequestFlowID, description: The flow id returned when creating a Billing Request Flow via the API.}
+        - {name: environment, values: [live, sandbox], description: Selects the GoCardless environment.}
+        - {name: onSuccess, description: 'Callback when the flow completes — verify the true outcome via webhook, not this callback.'}
+        - {name: onExit, description: Callback when the customer closes the modal before completing; may pass error details.}
+      methods: [open, exit]
+      react_hook: 'useGoCardlessDropin() → { open, exit, ready, error }'
+    supports:
+      - Direct Debit mandate setup (Billing Request Flow)
+    not_supported:
+      - {feature: Instant Bank Pay, use: Hosted or Custom Payment Pages instead.}
+      - {feature: Commercial VRP, use: Hosted or Custom Payment Pages instead.}
+
+  hosted_payment_pages:
+    description: >-
+      Fully GoCardless-hosted pages the merchant redirects the customer to,
+      backed by a Billing Request Flow. The redirect alternative to the Drop-in;
+      required for flows the Drop-in does not support (Instant Bank Pay, VRP,
+      PayTo).
+    components:
+      - {name: Hosted Payment Pages, description: 'GoCardless-hosted Billing Request Flow (mandate setup, Instant Bank Pay, verified mandates, VRP, PayTo).'}
+      - {name: Custom Payment Pages, description: Merchant-built pages driving the Billing Request API directly for full UI control.}
+    docs: https://developer.gocardless.com/getting-started/billing-requests/

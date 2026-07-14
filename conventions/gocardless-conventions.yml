@@ -1,0 +1,121 @@
+generated: '2026-07-14'
+method: searched
+source: >-
+  https://developer.gocardless.com/api-reference — the cross-cutting
+  request/response conventions that apply to every GoCardless endpoint, plus
+  derivation from openapi/gocardless-openapi.yml. GoCardless publishes its own
+  HTTP design guidelines (github.com/gocardless/http-api-design) that these
+  conventions follow.
+description: >-
+  How the GoCardless REST API behaves across every operation: authentication,
+  idempotency, cursor pagination, mandatory date-based versioning header,
+  the JSON:API-style error envelope, rate-limit signalling, and request
+  tracing. These are the developer-experience / runtime-semantics conventions
+  that the OpenAPI does not fully express.
+
+base_url: https://api.gocardless.com
+sandbox_base_url: https://api-sandbox.gocardless.com
+api_style: >-
+  REST over HTTPS. JSON request and response bodies keyed by the resource name
+  (JSON:API-influenced envelope). PATCH is not supported — use PUT to update.
+media_type: application/json
+
+authentication:
+  scheme: Bearer access token
+  header: 'Authorization: Bearer <access_token>'
+  detail: authentication/gocardless-authentication.yml
+  scopes: scopes/gocardless-scopes.yml
+  docs: https://developer.gocardless.com/api-reference/#making-requests-authentication
+
+versioning:
+  scheme: date-based, pinned per request
+  header: GoCardless-Version
+  required: true
+  current: '2015-07-06'
+  format: A version date, e.g. 2015-07-06
+  note: >-
+    Every request MUST send the GoCardless-Version header. Backwards-
+    incompatible changes are released as a new version date; integrations pin
+    to a version and upgrade deliberately.
+  changelog: changelog/gocardless-changelog.yml
+
+idempotency:
+  supported: true
+  mechanism: Idempotency-Key request header
+  applies_to: POST (create) requests
+  key_format: Client-generated unique value; GoCardless recommends a UUID v4 but any non-repeating unique string works.
+  behavior: >-
+    Reusing an Idempotency-Key returns the originally created resource instead
+    of creating a duplicate. A conflicting key surfaces as an
+    idempotent_creation_conflict error carrying the id of the existing resource.
+  docs: https://developer.gocardless.com/api-reference/#making-requests-idempotency-keys
+
+pagination:
+  style: cursor
+  default_order: reverse chronological
+  request_params:
+    limit: 1-500, default 50
+    after: cursor — return records after this point
+    before: cursor — return records before this point
+  response_fields:
+    meta.cursors.after: cursor for the next page (null when no more)
+    meta.cursors.before: cursor for the previous page
+    meta.limit: the page size applied
+  note: SDKs expose auto-pagination iterators that follow meta.cursors.after.
+  docs: https://developer.gocardless.com/api-reference/#making-requests-pagination
+
+metadata:
+  supported: true
+  mechanism: metadata key-value object on most resources
+  limits: Up to 3 keys; key <= 50 chars; value <= 500 chars.
+  description: Arbitrary key-value store attached to resources and echoed back in API responses and webhook payloads.
+
+error_envelope:
+  media_type: application/json
+  rfc9457: false
+  shape: '{ "error": { "type", "code", "message", "documentation_url", "request_id", "errors": [ ... ] } }'
+  types:
+    - type: gocardless
+      meaning: An internal error occurred at GoCardless (retry later).
+    - type: invalid_api_usage
+      meaning: 'Invalid URL, missing auth, insufficient permissions, rate limiting, or bad request syntax. Alert your dev team.'
+    - type: invalid_state
+      meaning: The request cannot be performed on the resource in its current state. Do not retry.
+    - type: validation_failed
+      meaning: 'Submitted parameters were invalid; the errors array carries field + message per invalid field.'
+  errors_array:
+    validation_failed: 'each entry has field and message'
+    other_types: 'each entry has reason and message'
+  decline_codes: errors/gocardless-decline-codes.yml
+  docs: https://developer.gocardless.com/api-reference/#overview-errors
+
+rate_limits:
+  signal_status: 429
+  signal_headers:
+    - RateLimit-Limit
+    - RateLimit-Remaining
+    - RateLimit-Reset
+  guidance: >-
+    Handle 429 Too Many Requests with backoff, especially when creating
+    payments in bulk. The reset time is provided in the RateLimit-Reset header.
+  docs: https://developer.gocardless.com/api-reference/#making-requests-rate-limiting
+
+request_tracing:
+  request_id_field: request_id
+  description: Errors carry a request_id; every response can be correlated to GoCardless support/logs by this identifier.
+
+webhooks:
+  signing_header: Webhook-Signature
+  verification: HMAC-SHA256 over the raw request body using the endpoint's webhook secret.
+  detail: asyncapi/gocardless-asyncapi.yml
+  docs: https://developer.gocardless.com/api-reference/#appendix-webhooks
+
+other_conventions:
+  - name: Sandbox vs live
+    detail: Selected by base host (api-sandbox vs api) and a distinct access token — no key prefix. See sandbox/gocardless-sandbox.yml.
+  - name: Amounts
+    detail: Integer minor units (e.g. pence, cents) with a separate currency field.
+  - name: Timestamps
+    detail: ISO 8601 UTC strings.
+  - name: Resource ids
+    detail: Prefixed, human-readable ids (e.g. CU… customers, MD… mandates, PM… payments). See data-model/gocardless-data-model.yml.

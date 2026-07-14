@@ -1,0 +1,72 @@
+generated: '2026-07-14'
+method: searched
+source: https://developer.gocardless.com/mandates/responding-to-mandate-events/
+description: >-
+  GoCardless's payment/mandate failure taxonomy — the bank-debit equivalent of
+  card decline codes. Because GoCardless collects via pull-based bank debit,
+  failures surface asynchronously through webhook events rather than a synchronous
+  card decline. The failure reason is delivered as the `cause` (and the
+  scheme-native `reason_code`) inside the `details` object on a payment `failed`
+  / `cancelled` event or a mandate `cancelled` / `failed` event. This captures
+  (1) the GoCardless API-level cause enum, (2) the Bacs ARUDD codes for failed
+  payments, and (3) the Bacs ADDACS codes for cancelled mandates. Distinct from
+  the API error types (gocardless / invalid_api_usage / invalid_state /
+  validation_failed) documented in conventions/gocardless-conventions.yml.
+docs:
+  - https://developer.gocardless.com/mandates/responding-to-mandate-events/
+  - https://gocardless.com/direct-debit/receiving-messages/
+  - https://gocardless.com/guides/posts/arudd-messages/
+envelope_field: details.cause   # on the payment/mandate event; scheme code in details.reason_code, origin in details.origin
+scheme_native: >-
+  Each Direct Debit scheme reports its own native reason codes; GoCardless
+  normalises them to the `cause` enum below. Bacs (UK) native codes are ARUDD
+  (failed payments) and ADDACS (cancelled mandates).
+
+# GoCardless-normalised failure causes (scheme-independent).
+decline_codes:
+  - {code: insufficient_funds, applies_to: payment, meaning: The customer did not have funds available to make the payment., action: Retry later or via Success+ intelligent retries.}
+  - {code: refer_to_payer, applies_to: payment, meaning: The bank could not process the payment — commonly insufficient funds or a privacy obstruction., action: Retry; contact the customer if it persists.}
+  - {code: bank_account_closed, applies_to: [payment, mandate], meaning: The customer's bank account has been closed; the mandate is cancelled., action: Collect a new mandate on a different account.}
+  - {code: mandate_cancelled, applies_to: [payment, mandate], meaning: The mandate was cancelled via the API/dashboard or at the customer's bank., action: Set up a new mandate before collecting again.}
+  - {code: invalid_bank_details, applies_to: [payment, mandate], meaning: The bank details used to set up the mandate were rejected as incorrect., action: Re-collect correct bank details.}
+  - {code: direct_debit_not_enabled, applies_to: [payment, mandate], meaning: The bank account does not support Direct Debit., action: Use a different account or scheme.}
+  - {code: bank_account_transferred, applies_to: [payment, mandate], meaning: The account was transferred to a new bank; the payment hit the old account., action: Resubmit / update to the new account details.}
+  - {code: authorisation_disputed, applies_to: [payment, mandate], meaning: The customer disputes that they authorised the mandate/payment., action: Do not retry; resolve with the customer (13-month SEPA / unlimited Bacs window).}
+  - {code: mandate_expired, applies_to: mandate, meaning: No payments were collected within the scheme dormancy window., action: Reinstate or set up a new mandate.}
+  - {code: payer_deceased, applies_to: [payment, mandate], meaning: The mandate was cancelled because the payer is deceased., action: Cease collection.}
+
+# Bacs (UK) ARUDD reason codes — failed payments. reason_code = the letter/digit.
+bacs_arudd_codes:
+  - {code: '0', meaning: 'Refer to payer — bank could not process, generally insufficient funds.'}
+  - {code: '1', meaning: Instruction cancelled — collection attempted against a cancelled DDI.}
+  - {code: '2', meaning: Payer deceased.}
+  - {code: '3', meaning: Account transferred — DDI moved to a new bank account.}
+  - {code: '5', meaning: No account (or wrong account type) — account number not recognised.}
+  - {code: '6', meaning: No instruction — no DDI is set up with you.}
+  - {code: '8', meaning: Amount not yet due — submitted before the DDI is fully established or before the notification date.}
+  - {code: '9', meaning: Presentation overdue — collected more than 3 working days after customer notification.}
+  - {code: A, meaning: Service user differs — your details do not match those on the DDI.}
+  - {code: B, meaning: Account closed — the customer closed their bank account.}
+
+# Bacs (UK) ADDACS reason codes — cancelled/amended mandates.
+bacs_addacs_codes:
+  - {code: '0', meaning: Instruction cancelled — refer to payer (catch-all).}
+  - {code: '1', meaning: Instruction cancelled by payer at their bank.}
+  - {code: '2', meaning: Payer deceased.}
+  - {code: '3', meaning: Account transferred to a new bank/building society — new DDI submission required.}
+  - {code: B, meaning: Account closed.}
+  - {code: C, meaning: 'Account transferred to a new bank/building society — no new DDI needed, update records.'}
+  - {code: D, meaning: Advance notice disputed — customer disputes the notice amount on their DDI.}
+  - {code: E, meaning: Instruction amended — customer changed name/details; update records without resubmitting.}
+  - {code: R, meaning: Instruction re-instated — a previously cancelled DDI was restored by the bank.}
+
+other_schemes:
+  note: >-
+    SEPA reports R-transaction codes (e.g. AC04 account closed, AM04
+    insufficient funds, MD01 no mandate), and PayTo (AU NPP) reports its own
+    status/error codes. GoCardless normalises these to the `cause` enum above.
+  payto_error_codes_reference: https://gocardless.com/en-au/guides/posts/payto-error-codes-status-codes/
+
+related:
+  conventions: conventions/gocardless-conventions.yml
+  sandbox_simulators: sandbox/gocardless-sandbox.yml

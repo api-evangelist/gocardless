@@ -1,0 +1,40 @@
+generated: '2026-07-14'
+method: derived
+source: >-
+  Derived from openapi/gocardless-openapi.yml (info.version) and the GoCardless
+  versioning documentation. GoCardless versions its REST API by date via the
+  mandatory GoCardless-Version header; a new version date is cut only for
+  backwards-incompatible changes, and integrations pin to a version and upgrade
+  deliberately. GoCardless does not publish a granular per-release dated
+  changelog in the style of Stripe, so this records the versioning scheme and
+  the current stable version rather than a fabricated entry stream.
+docs:
+  - https://developer.gocardless.com/api-reference/#making-requests-versioning
+  - https://gocardless.com/blog/new-api-release/
+versioning:
+  scheme: date-based, pinned per request
+  header: GoCardless-Version
+  required: true
+  current: '2015-07-06'
+  note: >-
+    2015-07-06 is the current stable version of the GoCardless Pro REST API
+    (v2). Additive, backwards-compatible changes (new endpoints, fields,
+    enum values) ship continuously without a new version date; only breaking
+    changes cut a new version date, which clients must opt into via the header.
+  detail: conventions/gocardless-conventions.yml
+entries:
+  - version: '2015-07-06'
+    latest: true
+    date: '2015-07-06'
+    highlights:
+      - Current stable GoCardless Pro REST API (v2) version pinned via GoCardless-Version.
+      - >-
+        Continuously extended in a backwards-compatible way with Billing
+        Requests, Instant Bank Pay (open banking), Verified Mandates, Payer
+        Authorisations, Instalment Schedules, Blocks (anti-fraud), and Outbound
+        Payments — none of which required a new version date.
+  - version: v1 (legacy)
+    date: '2014'
+    note: >-
+      The original GoCardless API (Basic). Superseded by the v2 Pro API on the
+      2015-07-06 version; retained only for legacy integrations.

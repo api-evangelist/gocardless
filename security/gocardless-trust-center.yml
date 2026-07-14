@@ -1,0 +1,27 @@
+generated: '2026-07-14'
+method: searched
+probe: false
+source: https://gocardless.com/security/
+url: https://gocardless.com/security/
+description: >-
+  GoCardless's security & compliance posture, captured from the GoCardless
+  security page. GoCardless is ISO 27001 certified (since 2016, across all
+  services and products) and is authorised by the UK Financial Conduct
+  Authority under the Payment Services Regulations 2017. It handles bank-debit
+  and open-banking payments (it does not store card PANs), and states PCI DSS
+  compliance for the card-adjacent surface. Only certifications GoCardless
+  states about itself are recorded here; third-party attestations are excluded.
+certifications:
+  - {name: ISO/IEC 27001, status: certified, since: '2016', scope: All GoCardless services and products, note: Reassessed annually by an accredited independent auditor (certified by the British Assessment Bureau).}
+  - {name: FCA authorisation, status: authorised, regulator: UK Financial Conduct Authority, basis: Payment Services Regulations 2017.}
+  - {name: PCI DSS, status: compliant, note: Stated on the GoCardless security/PCI guidance; GoCardless collects bank-debit and open-banking payments and does not store card numbers.}
+report_access:
+  note: >-
+    Security and compliance documentation (ISO 27001 certificate, due-diligence
+    packs) is provided to merchants and partners on request via GoCardless.
+docs:
+  - https://gocardless.com/security/
+  - https://gocardless.com/faq/merchants/security/
+evidence:
+  - {source: https://gocardless.com/security/, keywords: [iso27001 certified since 2016, authorised by the uk financial conduct authority, payment services regulations 2017]}
+  - {source: https://gocardless.com/faq/merchants/security/, keywords: [pci compliant, strong encryption, safeguarded bank accounts]}

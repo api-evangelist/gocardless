@@ -67,6 +67,22 @@ common:
     url: security/gocardless-domain-security.yml
   - type: Authentication
     url: authentication/gocardless-authentication.yml
+  - type: TrustCenter
+    url: security/gocardless-trust-center.yml
+  - type: OAuthScopes
+    url: scopes/gocardless-scopes.yml
+  - type: Sandbox
+    url: sandbox/gocardless-sandbox.yml
+  - type: Conventions
+    url: conventions/gocardless-conventions.yml
+  - type: ChangeLog
+    url: changelog/gocardless-changelog.yml
+  - type: Components
+    url: components/gocardless-components.yml
+  - type: DataModel
+    url: data-model/gocardless-data-model.yml
+  - type: DeclineCodes
+    url: errors/gocardless-decline-codes.yml
   - type: GitHubOrganization
     url: https://github.com/gocardless
   - type: LinkedIn

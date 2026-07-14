@@ -1,0 +1,116 @@
+generated: '2026-07-14'
+method: searched
+source: https://developer.gocardless.com/resources/test-bank-details
+description: >-
+  GoCardless's sandbox / test-data surface — the test bank details, magic
+  email/name values, and scenario simulators a developer needs to exercise the
+  API end-to-end without money moving through the banking system. GoCardless
+  separates sandbox and live by a completely different base host and access
+  token (there is no key prefix); sandbox mandates and payments are never
+  submitted to the real Bacs/SEPA/ACH schemes. Captured verbatim from the
+  GoCardless developer test-bank-details and scenario-simulators references.
+docs:
+  - https://developer.gocardless.com/resources/test-bank-details
+  - https://developer.gocardless.com/developer-tools/scenario-simulators
+  - https://support.gocardless.com/hc/en-gb/articles/212553869-Sandbox-accounts
+
+modes:
+  - name: sandbox
+    base_url: https://api-sandbox.gocardless.com
+    dashboard: https://manage-sandbox.gocardless.com
+    connect_oauth: https://connect-sandbox.gocardless.com/oauth/authorize
+    notes: >-
+      Full platform test environment. Payments and mandates are never submitted
+      to the banking system; use scenario simulators or magic test details to
+      drive lifecycle transitions. Requires a separate sandbox access token.
+  - name: live
+    base_url: https://api.gocardless.com
+    dashboard: https://manage.gocardless.com
+    connect_oauth: https://connect.gocardless.com/oauth/authorize
+
+auth:
+  scheme: Bearer access token (Authorization header)
+  note: >-
+    Sandbox and live use distinct access tokens issued from their respective
+    dashboards. Unlike Stripe there is no key prefix — the environment is
+    selected by base host.
+
+# Verbatim test bank details, grouped by scheme/country.
+test_bank_details:
+  bacs_uk:
+    scheme: bacs
+    sort_code: '200000'
+    account_number: '55779911'
+  faster_payments_uk:
+    sort_code: '200000'
+    account_number: '55779911'
+  sepa:
+    - {country: FR, iban: FR1420041010050500013M02606}
+    - {country: DE, iban: DE89370400440532013000}
+  ach_us:
+    scheme: ach
+    bank_code: '026073150'
+    account_number: '2715500356'
+    account_type: checking
+  autogiro_se:
+    scheme: autogiro
+    clearing_number: '5491'
+    account_number: '0000003'
+    swedish_id_number: '198112289874'
+  becs_au:
+    scheme: becs
+    bsb: 082-082
+    account_number: '012345678'
+  becs_nz:
+    scheme: becs_nz
+    bank_code: '12'
+    branch_code: '3113'
+    account_number: 0003869-00
+  betalingsservice_dk:
+    scheme: betalingsservice
+    bank_code: '345'
+    account_number: '3179681'
+    danish_id_number: '0101701234'
+  pad_ca:
+    scheme: pad
+    financial_institution_number: '0003'
+    branch_transit_number: '00006'
+    account_number: '1234567'
+
+# Magic values that route a sandbox flow to a specific behaviour.
+magic_values:
+  - {field: customer_email, value: protectplus_risky@gocardless.com, effect: Routes into the Verified Mandate (fraud/ProtectPlus) flow.}
+  - {field: customer_email, value: bank-guess@gocardless.com, effect: Triggers the bank-guess feature.}
+  - {field: modelbank_login, user: mits, password: mits, effect: ModelBank hosted open-banking test login.}
+
+# Scenario simulators drive lifecycle transitions in sandbox.
+# Payment/mandate simulators are selected by the customer given_name.
+scenario_simulators:
+  endpoint: POST /scenario_simulators/{id}/actions/run
+  docs: https://developer.gocardless.com/api-reference/#core-endpoints-scenario-simulators
+  payments_and_mandates:
+    selector: customer.given_name
+    values:
+      - {name: Successful, outcome: 'Payment submitted then confirmed and paid out.'}
+      - {name: Penniless, outcome: 'Payment submitted then failed (insufficient funds).'}
+      - {name: Fickle, outcome: 'Payment confirmed and paid out, then later charged back.'}
+      - {name: Late, outcome: 'Payment submitted, confirmed, then failed with delayed notification (late failure).'}
+      - {name: Invalid, outcome: 'Mandate submitted then failed (bank details rejected).'}
+      - {name: Expired, outcome: 'Mandate submitted, activated, then expired.'}
+      - {name: Switching, outcome: 'Mandate submitted, active, then transferred via the UK current-account switching service.'}
+  instalment_schedules:
+    values:
+      - {selector: customer.given_name, name: Successful, outcome: Schedule marked completed.}
+      - {selector: customer.given_name, name: Penniless, outcome: Schedule marked errored.}
+      - {selector: instalment_schedule.name, name: Faily, outcome: Schedule marked creation_failed.}
+  outbound_payments:
+    selector: outbound_payment.description
+    values:
+      - {value: failed_to_execute, outcome: 'executing then failed.'}
+      - {value: failed_due_to_bank_rejection, outcome: 'executing then failed.'}
+      - {value: failed_due_to_bank_rejection_after_execution, outcome: 'executing, executed, then failed.'}
+      - {value: '<any other value>', outcome: 'executing then executed.'}
+
+related:
+  decline_codes: errors/gocardless-decline-codes.yml
+  conventions: conventions/gocardless-conventions.yml
