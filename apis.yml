@@ -61,6 +61,8 @@ apis:
         url: https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/gocardless-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/gocardless-vulnerability-disclosure.yml
   - type: DomainSecurity
