@@ -1,0 +1,93 @@
+openapi: 3.1.0
+info:
+  title: GoCardless REST billing_request_flows payments API
+  version: '2015-07-06'
+  description: 'Subset of the public GoCardless REST API for collecting bank debit and
+
+    open-banking payments. Authentication uses a Bearer access token issued
+
+    from the dashboard. Every request must include the
+
+    `GoCardless-Version` header.
+
+    '
+  contact:
+    name: GoCardless Developers
+    url: https://developer.gocardless.com/
+servers:
+- url: https://api.gocardless.com
+  description: Live
+- url: https://api-sandbox.gocardless.com
+  description: Sandbox
+security:
+- bearerAuth: []
+tags:
+- name: payments
+paths:
+  /payments:
+    get:
+      tags:
+      - payments
+      summary: List payments
+      operationId: listPayments
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - payments
+      summary: Create a payment
+      operationId: createPayment
+      responses:
+        '201':
+          description: Created
+  /payments/{id}:
+    get:
+      tags:
+      - payments
+      summary: Get a payment
+      operationId: getPayment
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    put:
+      tags:
+      - payments
+      summary: Update a payment
+      operationId: updatePayment
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /payments/{id}/actions/cancel:
+    post:
+      tags:
+      - payments
+      summary: Cancel a payment
+      operationId: cancelPayment
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: GoCardless access token from the dashboard

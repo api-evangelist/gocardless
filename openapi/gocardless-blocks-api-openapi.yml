@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: GoCardless REST billing_request_flows blocks API
+  version: '2015-07-06'
+  description: 'Subset of the public GoCardless REST API for collecting bank debit and
+
+    open-banking payments. Authentication uses a Bearer access token issued
+
+    from the dashboard. Every request must include the
+
+    `GoCardless-Version` header.
+
+    '
+  contact:
+    name: GoCardless Developers
+    url: https://developer.gocardless.com/
+servers:
+- url: https://api.gocardless.com
+  description: Live
+- url: https://api-sandbox.gocardless.com
+  description: Sandbox
+security:
+- bearerAuth: []
+tags:
+- name: blocks
+paths:
+  /blocks:
+    post:
+      tags:
+      - blocks
+      summary: Create a block (anti-fraud rule)
+      operationId: createBlock
+      responses:
+        '201':
+          description: Created
+  /blocks/{id}:
+    get:
+      tags:
+      - blocks
+      summary: Get a block
+      operationId: getBlock
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: GoCardless access token from the dashboard
