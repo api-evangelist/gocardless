@@ -11,7 +11,19 @@ description: >-
   access tokens issued from the dashboard, with separate sandbox and live
   environments; every request must include a GoCardless-Version header.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/gocardless.png
 tags:
   - Payments
   - Direct Debit
@@ -29,37 +41,345 @@ created: '2026-05-11'
 modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
-  - aid: gocardless:rest-api
-    name: GoCardless REST API
-    description: >-
-      Versioned REST API for collecting bank debit and open-banking payments
-      worldwide. Resources include customers, customer bank accounts,
-      mandates, payments, payouts, subscriptions, refunds, billing requests,
-      events, and webhook endpoints. Authentication uses Bearer access
-      tokens; a GoCardless-Version header is required on every request.
-      Sandbox available at api-sandbox.gocardless.com.
-    humanURL: https://developer.gocardless.com/api-reference/
-    baseURL: https://api.gocardless.com
-    tags:
-      - Payments
-      - Direct Debit
-      - Subscriptions
-      - Bearer Auth
-      - Versioned API
-    properties:
-      - type: Documentation
-        url: https://developer.gocardless.com/api-reference/
-      - type: OpenAPI
-        url: https://developer.gocardless.com/api-reference/openapi
-      - type: GettingStarted
-        url: https://developer.gocardless.com/getting-started/set-up/
-      - type: Sandbox
-        url: https://api-sandbox.gocardless.com
-      - type: PostmanCollection
-        url: https://www.postman.com/gocardlessapi/gocardless-api/overview
-      - type: AsyncAPI
-        url: https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
-
+- aid: gocardless:gocardless-billing-request-flows-api
+  name: GoCardless billing_request_flows API
+  description: >-
+    The billing_request_flows API from GoCardless — 2 operation(s) for billing_request_flows.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - billing_request_flows
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-billing-request-flows-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-billing-requests-api
+  name: GoCardless billing_requests API
+  description: The billing_requests API from GoCardless — 2 operation(s) for billing_requests.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - billing_requests
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-billing-requests-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-blocks-api
+  name: GoCardless blocks API
+  description: The blocks API from GoCardless — 2 operation(s) for blocks.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - blocks
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-blocks-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-creditor-bank-accounts-api
+  name: GoCardless creditor_bank_accounts API
+  description: >-
+    The creditor_bank_accounts API from GoCardless — 1 operation(s) for creditor_bank_accounts.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - creditor_bank_accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-creditor-bank-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-creditors-api
+  name: GoCardless creditors API
+  description: The creditors API from GoCardless — 2 operation(s) for creditors.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - creditors
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-creditors-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-customer-bank-accounts-api
+  name: GoCardless customer_bank_accounts API
+  description: >-
+    The customer_bank_accounts API from GoCardless — 2 operation(s) for customer_bank_accounts.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - customer_bank_accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-customer-bank-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-customers-api
+  name: GoCardless customers API
+  description: The customers API from GoCardless — 2 operation(s) for customers.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - customers
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-customers-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-events-api
+  name: GoCardless events API
+  description: The events API from GoCardless — 2 operation(s) for events.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - events
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-events-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-instalment-schedules-api
+  name: GoCardless instalment_schedules API
+  description: The instalment_schedules API from GoCardless — 2 operation(s) for instalment_schedules.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - instalment_schedules
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-instalment-schedules-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-institutions-api
+  name: GoCardless institutions API
+  description: The institutions API from GoCardless — 1 operation(s) for institutions.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - institutions
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-institutions-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-mandates-api
+  name: GoCardless mandates API
+  description: The mandates API from GoCardless — 3 operation(s) for mandates.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - mandates
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-mandates-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-payer-authorisations-api
+  name: GoCardless payer_authorisations API
+  description: The payer_authorisations API from GoCardless — 2 operation(s) for payer_authorisations.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - payer_authorisations
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-payer-authorisations-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-payments-api
+  name: GoCardless payments API
+  description: The payments API from GoCardless — 3 operation(s) for payments.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - payments
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-payouts-api
+  name: GoCardless payouts API
+  description: The payouts API from GoCardless — 2 operation(s) for payouts.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - payouts
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-payouts-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-refunds-api
+  name: GoCardless refunds API
+  description: The refunds API from GoCardless — 2 operation(s) for refunds.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - refunds
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-refunds-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
+- aid: gocardless:gocardless-subscriptions-api
+  name: GoCardless subscriptions API
+  description: The subscriptions API from GoCardless — 3 operation(s) for subscriptions.
+  humanURL: https://developer.gocardless.com/api-reference/
+  baseURL: https://api.gocardless.com
+  tags:
+  - subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/gocardless-subscriptions-api-openapi.yml
+  - type: Documentation
+    url: https://developer.gocardless.com/api-reference/
+  - type: GettingStarted
+    url: https://developer.gocardless.com/getting-started/set-up/
+  - type: Sandbox
+    url: https://api-sandbox.gocardless.com
+  - type: PostmanCollection
+    url: https://www.postman.com/gocardlessapi/gocardless-api/overview
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/gocardless-agentic-access.yml
