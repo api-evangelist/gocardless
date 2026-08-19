@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoCardless REST billing_request_flows payer_authorisations API",
+    "version": "2015-07-06"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "payer_authorisations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a payer authorisation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/payer_authorisations"
+          },
+          "docs": "Create a payer authorisation"
+        },
+        {
+          "info": {
+            "name": "Get a payer authorisation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/payer_authorisations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a payer authorisation"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

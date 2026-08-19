@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoCardless REST billing_request_flows creditors API",
+    "version": "2015-07-06"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "creditors",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List creditors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/creditors"
+          },
+          "docs": "List creditors"
+        },
+        {
+          "info": {
+            "name": "Get a creditor",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/creditors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a creditor"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoCardless REST billing_request_flows blocks API",
+    "version": "2015-07-06"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "blocks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a block (anti-fraud rule)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/blocks"
+          },
+          "docs": "Create a block (anti-fraud rule)"
+        },
+        {
+          "info": {
+            "name": "Get a block",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/blocks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a block"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

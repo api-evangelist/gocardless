@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoCardless REST billing_request_flows instalment_schedules API",
+    "version": "2015-07-06"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "instalment_schedules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List instalment schedules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/instalment_schedules"
+          },
+          "docs": "List instalment schedules"
+        },
+        {
+          "info": {
+            "name": "Create an instalment schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/instalment_schedules"
+          },
+          "docs": "Create an instalment schedule"
+        },
+        {
+          "info": {
+            "name": "Get an instalment schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/instalment_schedules/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an instalment schedule"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

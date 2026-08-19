@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoCardless REST billing_request_flows mandates API",
+    "version": "2015-07-06"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "mandates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List mandates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/mandates"
+          },
+          "docs": "List mandates"
+        },
+        {
+          "info": {
+            "name": "Create a mandate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/mandates"
+          },
+          "docs": "Create a mandate"
+        },
+        {
+          "info": {
+            "name": "Get a mandate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/mandates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a mandate"
+        },
+        {
+          "info": {
+            "name": "Update a mandate",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gocardless.com/mandates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a mandate"
+        },
+        {
+          "info": {
+            "name": "Cancel a mandate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/mandates/:id/actions/cancel",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a mandate"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

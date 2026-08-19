@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoCardless REST billing_request_flows API",
+    "version": "2015-07-06"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "billing_request_flows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a billing request flow (hosted authorization link)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gocardless.com/billing_request_flows"
+          },
+          "docs": "Create a billing request flow (hosted authorization link)"
+        },
+        {
+          "info": {
+            "name": "Get a billing request flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gocardless.com/billing_request_flows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a billing request flow"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
