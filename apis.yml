@@ -29,6 +29,17 @@ tags:
   - Direct Debit
   - Bank Debit
   - Recurring Payments
+  - Subscription
+  - SEPA
+  - Bacs
+  - ACH
+  - Open Banking
+  - Fintech
+tags_raw:
+  - Payments
+  - Direct Debit
+  - Bank Debit
+  - Recurring Payments
   - Subscriptions
   - SEPA
   - Bacs
@@ -47,7 +58,8 @@ apis:
     The billing_request_flows API from GoCardless — 2 operation(s) for billing_request_flows.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
-  tags:
+  tags: []
+  tags_raw:
   - billing_request_flows
   properties:
   - type: OpenAPI
@@ -68,7 +80,8 @@ apis:
   description: The billing_requests API from GoCardless — 2 operation(s) for billing_requests.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
-  tags:
+  tags: []
+  tags_raw:
   - billing_requests
   properties:
   - type: OpenAPI
@@ -90,6 +103,8 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
+  - Blocks
+  tags_raw:
   - blocks
   properties:
   - type: OpenAPI
@@ -111,7 +126,8 @@ apis:
     The creditor_bank_accounts API from GoCardless — 1 operation(s) for creditor_bank_accounts.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
-  tags:
+  tags: []
+  tags_raw:
   - creditor_bank_accounts
   properties:
   - type: OpenAPI
@@ -133,6 +149,8 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
+  - Creditors
+  tags_raw:
   - creditors
   properties:
   - type: OpenAPI
@@ -154,7 +172,8 @@ apis:
     The customer_bank_accounts API from GoCardless — 2 operation(s) for customer_bank_accounts.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
-  tags:
+  tags: []
+  tags_raw:
   - customer_bank_accounts
   properties:
   - type: OpenAPI
@@ -176,6 +195,8 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
+  - Customers
+  tags_raw:
   - customers
   properties:
   - type: OpenAPI
@@ -197,6 +218,8 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
+  - Event
+  tags_raw:
   - events
   properties:
   - type: OpenAPI
@@ -217,7 +240,8 @@ apis:
   description: The instalment_schedules API from GoCardless — 2 operation(s) for instalment_schedules.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
-  tags:
+  tags: []
+  tags_raw:
   - instalment_schedules
   properties:
   - type: OpenAPI
@@ -260,6 +284,8 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
+  - Mandates
+  tags_raw:
   - mandates
   properties:
   - type: OpenAPI
@@ -280,7 +306,8 @@ apis:
   description: The payer_authorisations API from GoCardless — 2 operation(s) for payer_authorisations.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
-  tags:
+  tags: []
+  tags_raw:
   - payer_authorisations
   properties:
   - type: OpenAPI
@@ -302,6 +329,8 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
+  - Payments
+  tags_raw:
   - payments
   properties:
   - type: OpenAPI
@@ -323,6 +352,8 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
+  - Payouts
+  tags_raw:
   - payouts
   properties:
   - type: OpenAPI
@@ -344,6 +375,8 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
+  - Refunds
+  tags_raw:
   - refunds
   properties:
   - type: OpenAPI
@@ -365,6 +398,8 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
+  - Subscription
+  tags_raw:
   - subscriptions
   properties:
   - type: OpenAPI
