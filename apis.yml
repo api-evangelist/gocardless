@@ -428,6 +428,9 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/gocardless-capability-edges.yml
+    name: GoCardless Business Capability Map
   - type: AgenticAccess
     url: agentic-access/gocardless-agentic-access.yml
   - type: VulnerabilityDisclosure
