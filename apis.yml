@@ -161,7 +161,7 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
-  - Creditors
+  - creditors
   tags_raw:
   - creditors
   properties:
@@ -296,7 +296,7 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
-  - Mandates
+  - mandates
   tags_raw:
   - mandates
   properties:
