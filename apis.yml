@@ -161,7 +161,7 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
-  - creditors
+  - Creditors
   tags_raw:
   - creditors
   properties:
@@ -275,6 +275,8 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
+  - Institutions
+  tags_raw:
   - institutions
   properties:
   - type: OpenAPI
@@ -296,7 +298,7 @@ apis:
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
   tags:
-  - mandates
+  - Mandates
   tags_raw:
   - mandates
   properties:
