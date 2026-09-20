@@ -11,6 +11,10 @@ provenance:
   grounding: every price_text was found verbatim in the fetched page text
 audience: business-product
 pricing_basis: ad-valorem
+delivery:
+  delivery: managed
+  method: keyword-prefilter
+  read: '2026-09-20'
 published: true
 note: UK pricing page; percentage-per-transaction fees plus monthly add-ons. Prices exclude VAT; 25% discount
   for eligible charities.
