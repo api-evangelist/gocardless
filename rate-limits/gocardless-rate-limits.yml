@@ -1,0 +1,15 @@
+# Rate limits transcribed from the provider's own documentation — see provenance. Quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://docs.gocardless.com/docs/partner-integrations/supporting-mandates-set-up-outside-of-your-product
+sources:
+- https://docs.gocardless.com/docs/partner-integrations/supporting-mandates-set-up-outside-of-your-product
+provenance:
+  tool: planning/api-economics/harvest_ratelimits.py
+  run: 20260920T133210
+  grounding: every limit_text was found verbatim in the fetched page text
+published: false
+note: Page is a partner guide on importing mandates; it only mentions rate limiting in passing (link to
+  rate limiting docs, advising exponential backoff) with no numeric limits, headers, or status codes.
+limit_count: 0
+limits: []
