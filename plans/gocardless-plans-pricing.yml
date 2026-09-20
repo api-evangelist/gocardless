@@ -1,0 +1,54 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://gocardless.com/pricing
+sources:
+- https://gocardless.com/pricing
+- https://gocardless.com/pricing/
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T120546
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: ad-valorem
+published: true
+note: UK pricing page; percentage-per-transaction fees plus monthly add-ons. Prices exclude VAT; 25% discount
+  for eligible charities.
+plan_count: 6
+currency: GBP
+plans:
+- name: Standard
+  price_text: 1% + 20p
+  currency: GBP
+  period: per-use
+  unit: per transaction
+  included_quota: Domestic United Kingdom 1% + 20p Capped at £4; International 2% + 20p
+  overage: Transaction amount over £2,000 +0.3% (Direct Debits only)
+- name: Advanced
+  price_text: 1.25% + 20p
+  currency: GBP
+  period: per-use
+  unit: per transaction
+  included_quota: Domestic United Kingdom 1.25% + 20p Capped at £5; International 2.25% + 20p
+  overage: Transaction amount over £2,000 +0.3% (Direct Debits only)
+- name: Pro
+  price_text: 1.4% + 20p
+  currency: GBP
+  period: per-use
+  unit: per transaction
+  included_quota: Domestic United Kingdom 1.4% + 20p Capped at £5.60; International 2.4% + 20p
+  overage: Transaction amount over £2,000 +0.3% (Direct Debits only)
+- name: Custom
+  price_text: Contact Sales
+  period: none
+  included_quota: For businesses with £1m+ annual revenue or bespoke needs; volume-based discounts
+- name: 'Add-on: Your name on bank statements'
+  price_text: +£50 per month
+  price: 50
+  currency: GBP
+  period: month
+- name: 'Add-on: Fully custom checkout'
+  price_text: +£150 per month
+  price: 150
+  currency: GBP
+  period: month

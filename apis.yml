@@ -433,6 +433,8 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 common:
+  - type: Plans
+    url: plans/gocardless-plans-pricing.yml
   - type: CapabilityMap
     url: capabilities/gocardless-capability-edges.yml
     name: GoCardless Business Capability Map
