@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: GoCardless REST billing_request_flows blocks API
+  title: GoCardless REST Blocks API
   version: '2015-07-06'
   description: 'Subset of the public GoCardless REST API for collecting bank debit and
 
@@ -8,9 +8,7 @@ info:
 
     from the dashboard. Every request must include the
 
-    `GoCardless-Version` header.
-
-    '
+    `GoCardless-Version` header.'
   contact:
     name: GoCardless Developers
     url: https://developer.gocardless.com/
@@ -22,12 +20,12 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: blocks
+- name: Blocks
 paths:
   /blocks:
     post:
       tags:
-      - blocks
+      - Blocks
       summary: Create a block (anti-fraud rule)
       operationId: createBlock
       responses:
@@ -36,7 +34,7 @@ paths:
   /blocks/{id}:
     get:
       tags:
-      - blocks
+      - Blocks
       summary: Get a block
       operationId: getBlock
       parameters:

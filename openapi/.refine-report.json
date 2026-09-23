@@ -1,22 +1,7 @@
 {
   "provider": "gocardless",
   "sources": [
-    "gocardless-billing-request-flows-api-openapi.yml",
-    "gocardless-billing-requests-api-openapi.yml",
-    "gocardless-blocks-api-openapi.yml",
-    "gocardless-creditor-bank-accounts-api-openapi.yml",
-    "gocardless-creditors-api-openapi.yml",
-    "gocardless-customer-bank-accounts-api-openapi.yml",
-    "gocardless-customers-api-openapi.yml",
-    "gocardless-events-api-openapi.yml",
-    "gocardless-instalment-schedules-api-openapi.yml",
-    "gocardless-institutions-api-openapi.yml",
-    "gocardless-mandates-api-openapi.yml",
-    "gocardless-payer-authorisations-api-openapi.yml",
-    "gocardless-payments-api-openapi.yml",
-    "gocardless-payouts-api-openapi.yml",
-    "gocardless-refunds-api-openapi.yml",
-    "gocardless-subscriptions-api-openapi.yml"
+    "_original/gocardless-openapi.yml"
   ],
   "outputs": [
     "gocardless-billing-request-flows-api-openapi.yml",
@@ -39,6 +24,27 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "gocardless-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "gocardless-billing-request-flows-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-billing-requests-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-blocks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-creditor-bank-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-creditors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-customer-bank-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-customers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-instalment-schedules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-institutions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-mandates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-payer-authorisations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-payments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-payouts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-refunds-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gocardless-subscriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

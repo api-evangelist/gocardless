@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: GoCardless REST billing_request_flows customers API
+  title: GoCardless REST Customers API
   version: '2015-07-06'
   description: 'Subset of the public GoCardless REST API for collecting bank debit and
 
@@ -8,9 +8,7 @@ info:
 
     from the dashboard. Every request must include the
 
-    `GoCardless-Version` header.
-
-    '
+    `GoCardless-Version` header.'
   contact:
     name: GoCardless Developers
     url: https://developer.gocardless.com/
@@ -22,12 +20,12 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: customers
+- name: Customers
 paths:
   /customers:
     get:
       tags:
-      - customers
+      - Customers
       summary: List customers
       operationId: listCustomers
       responses:
@@ -35,7 +33,7 @@ paths:
           description: OK
     post:
       tags:
-      - customers
+      - Customers
       summary: Create a customer
       operationId: createCustomer
       responses:
@@ -44,7 +42,7 @@ paths:
   /customers/{id}:
     get:
       tags:
-      - customers
+      - Customers
       summary: Get a customer
       operationId: getCustomer
       parameters:
@@ -58,7 +56,7 @@ paths:
           description: OK
     put:
       tags:
-      - customers
+      - Customers
       summary: Update a customer
       operationId: updateCustomer
       parameters:

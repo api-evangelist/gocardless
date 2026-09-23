@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: GoCardless REST billing_request_flows payments API
+  title: GoCardless REST Payments API
   version: '2015-07-06'
   description: 'Subset of the public GoCardless REST API for collecting bank debit and
 
@@ -8,9 +8,7 @@ info:
 
     from the dashboard. Every request must include the
 
-    `GoCardless-Version` header.
-
-    '
+    `GoCardless-Version` header.'
   contact:
     name: GoCardless Developers
     url: https://developer.gocardless.com/
@@ -22,12 +20,12 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: payments
+- name: Payments
 paths:
   /payments:
     get:
       tags:
-      - payments
+      - Payments
       summary: List payments
       operationId: listPayments
       responses:
@@ -35,7 +33,7 @@ paths:
           description: OK
     post:
       tags:
-      - payments
+      - Payments
       summary: Create a payment
       operationId: createPayment
       responses:
@@ -44,7 +42,7 @@ paths:
   /payments/{id}:
     get:
       tags:
-      - payments
+      - Payments
       summary: Get a payment
       operationId: getPayment
       parameters:
@@ -58,7 +56,7 @@ paths:
           description: OK
     put:
       tags:
-      - payments
+      - Payments
       summary: Update a payment
       operationId: updatePayment
       parameters:
@@ -73,7 +71,7 @@ paths:
   /payments/{id}/actions/cancel:
     post:
       tags:
-      - payments
+      - Payments
       summary: Cancel a payment
       operationId: cancelPayment
       parameters:

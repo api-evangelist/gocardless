@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: GoCardless REST billing_request_flows mandates API
+  title: GoCardless REST Mandates API
   version: '2015-07-06'
   description: 'Subset of the public GoCardless REST API for collecting bank debit and
 
@@ -8,9 +8,7 @@ info:
 
     from the dashboard. Every request must include the
 
-    `GoCardless-Version` header.
-
-    '
+    `GoCardless-Version` header.'
   contact:
     name: GoCardless Developers
     url: https://developer.gocardless.com/
@@ -22,12 +20,12 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: mandates
+- name: Mandates
 paths:
   /mandates:
     get:
       tags:
-      - mandates
+      - Mandates
       summary: List mandates
       operationId: listMandates
       responses:
@@ -35,7 +33,7 @@ paths:
           description: OK
     post:
       tags:
-      - mandates
+      - Mandates
       summary: Create a mandate
       operationId: createMandate
       responses:
@@ -44,7 +42,7 @@ paths:
   /mandates/{id}:
     get:
       tags:
-      - mandates
+      - Mandates
       summary: Get a mandate
       operationId: getMandate
       parameters:
@@ -58,7 +56,7 @@ paths:
           description: OK
     put:
       tags:
-      - mandates
+      - Mandates
       summary: Update a mandate
       operationId: updateMandate
       parameters:
@@ -73,7 +71,7 @@ paths:
   /mandates/{id}/actions/cancel:
     post:
       tags:
-      - mandates
+      - Mandates
       summary: Cancel a mandate
       operationId: cancelMandate
       parameters:
