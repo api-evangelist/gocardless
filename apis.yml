@@ -68,7 +68,7 @@ modified: '2026-05-30'
 specificationVersion: '0.23'
 apis:
 - aid: gocardless:gocardless-billing-request-flows-api
-  name: GoCardless billing_request_flows API
+  name: GoCardless Billing Request Flows API
   description: >-
     The billing_request_flows API from GoCardless — 2 operation(s) for billing_request_flows.
   humanURL: https://developer.gocardless.com/api-reference/
@@ -91,7 +91,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-billing-requests-api
-  name: GoCardless billing_requests API
+  name: GoCardless Billing Requests API
   description: The billing_requests API from GoCardless — 2 operation(s) for billing_requests.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -113,7 +113,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-blocks-api
-  name: GoCardless blocks API
+  name: GoCardless Blocks API
   description: The blocks API from GoCardless — 2 operation(s) for blocks.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -136,7 +136,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-creditor-bank-accounts-api
-  name: GoCardless creditor_bank_accounts API
+  name: GoCardless Creditor Bank Accounts API
   description: >-
     The creditor_bank_accounts API from GoCardless — 1 operation(s) for creditor_bank_accounts.
   humanURL: https://developer.gocardless.com/api-reference/
@@ -159,7 +159,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-creditors-api
-  name: GoCardless creditors API
+  name: GoCardless Creditors API
   description: The creditors API from GoCardless — 2 operation(s) for creditors.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -182,7 +182,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-customer-bank-accounts-api
-  name: GoCardless customer_bank_accounts API
+  name: GoCardless Customer Bank Accounts API
   description: >-
     The customer_bank_accounts API from GoCardless — 2 operation(s) for customer_bank_accounts.
   humanURL: https://developer.gocardless.com/api-reference/
@@ -205,7 +205,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-customers-api
-  name: GoCardless customers API
+  name: GoCardless Customers API
   description: The customers API from GoCardless — 2 operation(s) for customers.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -228,7 +228,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-events-api
-  name: GoCardless events API
+  name: GoCardless Events API
   description: The events API from GoCardless — 2 operation(s) for events.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -251,7 +251,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-instalment-schedules-api
-  name: GoCardless instalment_schedules API
+  name: GoCardless Instalment Schedules API
   description: The instalment_schedules API from GoCardless — 2 operation(s) for instalment_schedules.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -273,7 +273,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-institutions-api
-  name: GoCardless institutions API
+  name: GoCardless Institutions API
   description: The institutions API from GoCardless — 1 operation(s) for institutions.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -296,7 +296,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-mandates-api
-  name: GoCardless mandates API
+  name: GoCardless Mandates API
   description: The mandates API from GoCardless — 3 operation(s) for mandates.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -319,7 +319,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-payer-authorisations-api
-  name: GoCardless payer_authorisations API
+  name: GoCardless Payer Authorisations API
   description: The payer_authorisations API from GoCardless — 2 operation(s) for payer_authorisations.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -341,7 +341,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-payments-api
-  name: GoCardless payments API
+  name: GoCardless Payments API
   description: The payments API from GoCardless — 3 operation(s) for payments.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -364,7 +364,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-payouts-api
-  name: GoCardless payouts API
+  name: GoCardless Payouts API
   description: The payouts API from GoCardless — 2 operation(s) for payouts.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -387,7 +387,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-refunds-api
-  name: GoCardless refunds API
+  name: GoCardless Refunds API
   description: The refunds API from GoCardless — 2 operation(s) for refunds.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
@@ -410,7 +410,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml
 - aid: gocardless:gocardless-subscriptions-api
-  name: GoCardless subscriptions API
+  name: GoCardless Subscriptions API
   description: The subscriptions API from GoCardless — 3 operation(s) for subscriptions.
   humanURL: https://developer.gocardless.com/api-reference/
   baseURL: https://api.gocardless.com
