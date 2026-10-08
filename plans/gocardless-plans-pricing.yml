@@ -56,3 +56,57 @@ plans:
   price: 150
   currency: GBP
   period: month
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - metered
+  - subscription
+  units:
+  - transaction
+  plans:
+  - name: Standard
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - transaction
+    periods:
+    - other
+  - name: Advanced
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - transaction
+    periods:
+    - other
+  - name: Pro
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - transaction
+    periods:
+    - other
+  - name: Custom
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: 'Add-on: Your name on bank statements'
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: 'Add-on: Fully custom checkout'
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
