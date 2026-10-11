@@ -1,0 +1,425 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/gocardless/integrations
+checked:
+- https://zapier.com/apps/gocardless/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  app: gocardless
+  url: https://zapier.com/apps/gocardless/integrations
+  external_url: https://gocardless.com/
+  partner_tier: GOLD
+  triggers:
+  - key: billing_request_created
+    label: New Payment Authorisation Request
+  - key: billing_request_fulfilled
+    label: Payment Authorisation Approved
+  - key: mandate_activated
+    label: Mandate Activated
+  - key: mandate_cancelled
+    label: Mandate Cancelled
+  - key: mandate_created
+    label: New Mandate Created
+  - key: payment_confirmed
+    label: Payment Confirmed
+  - key: payment_failed
+    label: Failed Payment
+  - key: payment_paid_out
+    label: Payment Paid Out
+  - key: payment_submitted
+    label: Payment Submitted
+  - key: payout_paid
+    label: Payout Paid
+  actions:
+  - key: create_direct_debit_mandate
+    label: Create Mandate Authorisation Request
+  - key: create_instant_bank_pay
+    label: Create Instant Bank Payment
+  - key: create_instant_first_pay_direct_debit_mandate
+    label: Create Instant First Payment + Direct Debit Mandate
+  - key: create_payment
+    label: Create Direct Debit Payment
+  - key: create_subscription
+    label: Create Subscription
+  - key: _zap_raw_request
+    label: API Request (Beta)
+  searches:
+  - key: search_billing_request
+    label: Search for a Billing Request
+  - key: search_customer
+    label: Search for a Customer
+  - key: search_customer_bank_account
+    label: Search for a Customer Bank Account
+  - key: search_mandate
+    label: Search for a Mandate
+  - key: search_payment
+    label: Search for a Payment
+  - key: search_payout
+    label: Search for a Payout
+  - key: search_payout_items
+    label: Search for Payout Items by Payout ID
+edges:
+- partner_name: Airtable
+  partner: airtable
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/airtable
+  direction: third-party
+  category: Databases
+  partner_url: https://airtable.com/
+- partner_name: HubSpot
+  partner: hubspot
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/hubspot
+  direction: third-party
+  category: Marketing Automation
+  partner_url: http://www.hubspot.com/
+- partner_name: Shopify
+  partner: shopify
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/shopify
+  direction: third-party
+  category: eCommerce
+  partner_url: https://www.shopify.com/
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Gmail
+  partner: gmail
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/gmail
+  direction: third-party
+  category: Email
+  partner_url: https://mail.google.com/
+- partner_name: Xero
+  partner: xero
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/xero
+  direction: third-party
+  category: Accounting
+  partner_url: https://xero5440.partnerlinks.io/uvwuuwrxyoi8
+- partner_name: Slack
+  partner: slack
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/slack
+  direction: third-party
+  category: Team Chat
+  partner_url: https://slack.com/
+- partner_name: monday.com
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/monday
+  direction: third-party
+  category: Project Management
+  partner_url: https://monday.com/
+- partner_name: Mailchimp
+  partner: mailchimp
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/mailchimp
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://mailchimp.com/
+- partner_name: QuickBooks Online
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/quickbooks
+  direction: third-party
+  category: Accounting
+  partner_url: http://intuit.com/
+- partner_name: Notion
+  partner: notion
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/notion
+  direction: third-party
+  category: Task Management
+  partner_url: https://www.notion.so/
+- partner_name: Microsoft Outlook
+  partner: microsoft-outlook
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/microsoft-outlook
+  direction: third-party
+  category: Calendar
+  partner_url: https://outlook.live.com/
+- partner_name: Bitrix24 CRM
+  partner: bitrix24
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/bitrix24-crm-new
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.bitrix24.com/apps/?app=integrations24.zapierbitrix24crm
+- partner_name: MailerLite
+  partner: mailerlite
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/mailerlite
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://www.mailerlite.com/?utm_source=zapier&utm_medium=partner&utm_campaign=profile&utm_term=learn_more&utm_content=integrations
+- partner_name: ActiveCampaign
+  partner: activecampaign
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/activecampaign
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://www.activecampaign.com/?utm_source=unpaid_syndication_website&utm_medium=referral&utm_campaign=zapier_listing
+- partner_name: Brevo
+  partner: brevo
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/brevo
+  direction: third-party
+  category: Email Newsletters
+  partner_url: https://www.sendinblue.com/?utm_medium=plugin&utm_source=zapier
+- partner_name: Close
+  partner: close
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/close
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.close.com/?utm_source=Partner&utm_medium=Integration_Listing&utm_campaign=2025_Partnerships&utm_content=Home
+- partner_name: ClickUp
+  partner: clickup
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/clickup
+  direction: third-party
+  category: Project Management
+  partner_url: https://clickup.com/zapier
+- partner_name: Microsoft Excel
+  partner: null
+  partner_match: null
+  partner_candidate: zapier
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/excel
+  direction: third-party
+  category: Microsoft
+  partner_url: https://zapier.com/office.com
+- partner_name: systeme.io
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/systemeio
+  direction: third-party
+  category: Marketing
+  partner_url: https://systeme.io/
+- partner_name: Teachworks
+  partner: teachworks
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/teachworks
+  direction: third-party
+  category: Online Courses
+  partner_url: https://teachworks.com/
+- partner_name: Wix
+  partner: wix
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/wix
+  direction: third-party
+  category: Website Builders
+  partner_url: https://www.wix.com/
+- partner_name: Discord
+  partner: discord
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/discord
+  direction: third-party
+  category: Team Chat
+  partner_url: https://discordapp.com/
+- partner_name: Google Forms
+  partner: google-forms
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/google-forms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: http://google.com/
+- partner_name: FreshBooks
+  partner: freshbooks
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/freshbooks
+  direction: third-party
+  category: Accounting
+  partner_url: https://www.freshbooks.com/?ref=10350
+- partner_name: Beacon
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/beacon
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.beaconcrm.org/
+- partner_name: Zoho CRM
+  partner: zoho-crm
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/zoho-crm
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://go.zoho.com/wOk
+- partner_name: Xperiencify
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/xperiencify
+  direction: third-party
+  category: Online Courses
+  partner_url: https://xperiencify.com/
+- partner_name: ServiceM8
+  partner: servicem8
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/servicem8
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: http://servicem8.com/
+- partner_name: Invoice Ninja
+  partner: invoice-ninja
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  evidence: https://zapier.com/apps/gocardless/integrations/invoice-ninja
+  direction: third-party
+  category: Proposal & Invoice Management
+  partner_url: https://www.invoiceninja.com/
+templates:
+- title: Create Slack channel messages for new GoCardless mandates
+  url: https://zapier.com/apps/gocardless/integrations/slack/1384435/create-slack-channel-messages-for-new-gocardless-mandates
+  apps:
+  - gocardless
+  - slack
+- title: Post new failed GoCardless payments to Slack
+  url: https://zapier.com/apps/gocardless/integrations/slack/1160491/post-new-failed-gocardless-payments-to-slack
+  apps:
+  - gocardless
+  - slack
+- title: Notify on Slack with a channel message when mandates are cancelled in GoCardless
+  url: https://zapier.com/apps/gocardless/integrations/slack/1604271/notify-on-slack-with-a-channel-message-when-mandates-are-cancelled-in-gocardless
+  apps:
+  - gocardless
+  - slack
+- title: Record GoCardless failed payments in Google Sheets rows
+  url: https://zapier.com/apps/gocardless/integrations/google-sheets/1636165/record-gocardless-failed-payments-in-google-sheets-rows
+  apps:
+  - gocardless
+  - google-sheets
+- title: Create Mailchimp subscribers from new GoCardless instant payments or mandates
+  url: https://zapier.com/apps/gocardless/integrations/mailchimp/1161434/create-mailchimp-subscribers-from-new-gocardless-instant-payments-or-mandates
+  apps:
+  - gocardless
+  - mailchimp
+- title: Send outbound emails for cancelled GoCardless mandates with Email by Zapier
+  url: https://zapier.com/apps/email/integrations/gocardless/1231559/send-outbound-emails-for-cancelled-gocardless-mandates-with-email-by-zapier
+  apps:
+  - gocardless
+  - email
+- title: Create instant bank payments in GoCardless for new invitees in Calendly
+  url: https://zapier.com/apps/calendly/integrations/gocardless/1623705/create-instant-bank-payments-in-gocardless-for-new-invitees-in-calendly
+  apps:
+  - calendly
+  - gocardless
+- title: Create and manage LeadConnector contacts from new GoCardless mandates
+  url: https://zapier.com/apps/gocardless/integrations/leadconnector/1651738/create-and-manage-leadconnector-contacts-from-new-gocardless-mandates
+  apps:
+  - gocardless
+  - leadconnector
+- title: Send emails in Gmail for failed payments in GoCardless
+  url: https://zapier.com/apps/gmail/integrations/gocardless/1240446/send-emails-in-gmail-for-failed-payments-in-gocardless
+  apps:
+  - gocardless
+  - gmail
+- title: Create Slack private channel messages for new GoCardless mandates
+  url: https://zapier.com/apps/gocardless/integrations/slack/1312742/create-slack-private-channel-messages-for-new-gocardless-mandates
+  apps:
+  - gocardless
+  - slack
+- title: Add new GoCardless completed billing requests to Google Sheets
+  url: https://zapier.com/apps/gocardless/integrations/google-sheets/1161301/add-new-gocardless-completed-billing-requests-to-google-sheets
+  apps:
+  - gocardless
+  - google-sheets
+- title: Add newly cancelled GoCardless mandates to Google Sheets rows
+  url: https://zapier.com/apps/gocardless/integrations/google-sheets/1161336/add-newly-cancelled-gocardless-mandates-to-google-sheets-rows
+  apps:
+  - gocardless
+  - google-sheets
+template_total: 278
