@@ -11,6 +11,7 @@
   use_case: Create Slack channel messages for new GoCardless mandates
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/slack/1384435/create-slack-channel-messages-for-new-gocardless-mandates
   template: https://zapier.com/apps/gocardless/integrations/slack/1384435/create-slack-channel-messages-for-new-gocardless-mandates
   source: template
@@ -24,6 +25,7 @@
   use_case: Post new failed GoCardless payments to Slack
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/slack/1160491/post-new-failed-gocardless-payments-to-slack
   template: https://zapier.com/apps/gocardless/integrations/slack/1160491/post-new-failed-gocardless-payments-to-slack
   source: template
@@ -37,6 +39,7 @@
   use_case: Notify on Slack with a channel message when mandates are cancelled in GoCardless
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/slack/1604271/notify-on-slack-with-a-channel-message-when-mandates-are-cancelled-in-gocardless
   template: https://zapier.com/apps/gocardless/integrations/slack/1604271/notify-on-slack-with-a-channel-message-when-mandates-are-cancelled-in-gocardless
   source: template
@@ -50,6 +53,7 @@
   use_case: Record GoCardless failed payments in Google Sheets rows
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/google-sheets/1636165/record-gocardless-failed-payments-in-google-sheets-rows
   template: https://zapier.com/apps/gocardless/integrations/google-sheets/1636165/record-gocardless-failed-payments-in-google-sheets-rows
   source: template
@@ -63,6 +67,7 @@
   use_case: Create Mailchimp subscribers from new GoCardless instant payments or mandates
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/mailchimp/1161434/create-mailchimp-subscribers-from-new-gocardless-instant-payments-or-mandates
   template: https://zapier.com/apps/gocardless/integrations/mailchimp/1161434/create-mailchimp-subscribers-from-new-gocardless-instant-payments-or-mandates
   source: template
@@ -76,6 +81,7 @@
   use_case: Send emails in Gmail for failed payments in GoCardless
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gmail/integrations/gocardless/1240446/send-emails-in-gmail-for-failed-payments-in-gocardless
   template: https://zapier.com/apps/gmail/integrations/gocardless/1240446/send-emails-in-gmail-for-failed-payments-in-gocardless
   source: template
@@ -89,6 +95,7 @@
   use_case: Create Slack private channel messages for new GoCardless mandates
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/slack/1312742/create-slack-private-channel-messages-for-new-gocardless-mandates
   template: https://zapier.com/apps/gocardless/integrations/slack/1312742/create-slack-private-channel-messages-for-new-gocardless-mandates
   source: template
@@ -102,6 +109,7 @@
   use_case: Add new GoCardless completed billing requests to Google Sheets
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/google-sheets/1161301/add-new-gocardless-completed-billing-requests-to-google-sheets
   template: https://zapier.com/apps/gocardless/integrations/google-sheets/1161301/add-new-gocardless-completed-billing-requests-to-google-sheets
   source: template
@@ -115,6 +123,7 @@
   use_case: Add newly cancelled GoCardless mandates to Google Sheets rows
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/google-sheets/1161336/add-newly-cancelled-gocardless-mandates-to-google-sheets-rows
   template: https://zapier.com/apps/gocardless/integrations/google-sheets/1161336/add-newly-cancelled-gocardless-mandates-to-google-sheets-rows
   source: template
@@ -127,6 +136,7 @@
   category: Databases
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/airtable
   source: edge
   status: pending-generation
@@ -138,6 +148,7 @@
   category: Marketing Automation
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/hubspot
   source: edge
   status: pending-generation
@@ -149,6 +160,7 @@
   category: eCommerce
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/shopify
   source: edge
   status: pending-generation
@@ -160,6 +172,7 @@
   category: Accounting
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/xero
   source: edge
   status: pending-generation
@@ -171,6 +184,7 @@
   category: Project Management
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/monday
   source: edge
   status: pending-generation
@@ -181,6 +195,7 @@
   category: Accounting
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/quickbooks
   source: edge
   status: pending-partner-spec
@@ -192,6 +207,7 @@
   category: Task Management
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/notion
   source: edge
   status: pending-generation
@@ -203,6 +219,7 @@
   category: Calendar
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/microsoft-outlook
   source: edge
   status: pending-generation
@@ -214,6 +231,7 @@
   category: CRM (Customer Relationship Management)
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/bitrix24-crm-new
   source: edge
   status: pending-generation
@@ -225,6 +243,7 @@
   category: Marketing Automation
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/mailerlite
   source: edge
   status: pending-generation
@@ -236,6 +255,7 @@
   category: Marketing Automation
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/activecampaign
   source: edge
   status: pending-generation
@@ -247,6 +267,7 @@
   category: Email Newsletters
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/brevo
   source: edge
   status: pending-generation
@@ -258,6 +279,7 @@
   category: CRM (Customer Relationship Management)
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/close
   source: edge
   status: pending-generation
@@ -269,6 +291,7 @@
   category: Project Management
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/clickup
   source: edge
   status: pending-generation
@@ -280,6 +303,7 @@
   category: Microsoft
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/excel
   source: edge
   status: pending-generation
@@ -290,6 +314,7 @@
   category: Marketing
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/systemeio
   source: edge
   status: pending-partner-spec
@@ -301,6 +326,7 @@
   category: Online Courses
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/teachworks
   source: edge
   status: pending-generation
@@ -312,6 +338,7 @@
   category: Website Builders
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/wix
   source: edge
   status: pending-generation
@@ -323,6 +350,7 @@
   category: Team Chat
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/discord
   source: edge
   status: pending-generation
@@ -334,6 +362,7 @@
   category: Forms & Surveys
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/google-forms
   source: edge
   status: pending-generation
@@ -345,6 +374,7 @@
   category: Accounting
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/freshbooks
   source: edge
   status: pending-generation
@@ -355,6 +385,7 @@
   category: CRM (Customer Relationship Management)
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/beacon
   source: edge
   status: pending-partner-spec
@@ -366,6 +397,7 @@
   category: CRM (Customer Relationship Management)
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/zoho-crm
   source: edge
   status: pending-generation
@@ -376,6 +408,7 @@
   category: Online Courses
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/xperiencify
   source: edge
   status: pending-partner-spec
@@ -387,6 +420,7 @@
   category: CRM (Customer Relationship Management)
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/servicem8
   source: edge
   status: pending-generation
@@ -398,6 +432,7 @@
   category: Proposal & Invoice Management
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/invoice-ninja
   source: edge
   status: pending-generation

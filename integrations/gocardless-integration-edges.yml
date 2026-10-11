@@ -3,10 +3,14 @@ method: searched
 source:
 - https://zapier.com/apps/gocardless/integrations
 checked:
+- https://composio.dev/toolkits/gocardless
+- https://monid.ai/tools/gocardless
+- https://n8n.io/integrations/gocardless/
 - https://zapier.com/apps/gocardless/integrations
 summary: null
 marketplace_apps:
 - marketplace: zapier
+  channel: ipaas-listing
   app: gocardless
   url: https://zapier.com/apps/gocardless/integrations
   external_url: https://gocardless.com/
@@ -67,6 +71,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/airtable
   direction: third-party
   category: Databases
@@ -77,6 +82,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/hubspot
   direction: third-party
   category: Marketing Automation
@@ -87,6 +93,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/shopify
   direction: third-party
   category: eCommerce
@@ -97,6 +104,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/google-sheets
   direction: third-party
   category: Google
@@ -107,6 +115,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/gmail
   direction: third-party
   category: Email
@@ -117,6 +126,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/xero
   direction: third-party
   category: Accounting
@@ -127,6 +137,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/slack
   direction: third-party
   category: Team Chat
@@ -137,6 +148,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/monday
   direction: third-party
   category: Project Management
@@ -147,6 +159,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/mailchimp
   direction: third-party
   category: Marketing Automation
@@ -157,6 +170,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/quickbooks
   direction: third-party
   category: Accounting
@@ -167,6 +181,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/notion
   direction: third-party
   category: Task Management
@@ -177,6 +192,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/microsoft-outlook
   direction: third-party
   category: Calendar
@@ -187,6 +203,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/bitrix24-crm-new
   direction: third-party
   category: CRM (Customer Relationship Management)
@@ -197,6 +214,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/mailerlite
   direction: third-party
   category: Marketing Automation
@@ -207,6 +225,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/activecampaign
   direction: third-party
   category: Marketing Automation
@@ -217,6 +236,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/brevo
   direction: third-party
   category: Email Newsletters
@@ -227,6 +247,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/close
   direction: third-party
   category: CRM (Customer Relationship Management)
@@ -237,6 +258,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/clickup
   direction: third-party
   category: Project Management
@@ -247,6 +269,7 @@ edges:
   partner_candidate: zapier
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/excel
   direction: third-party
   category: Microsoft
@@ -257,6 +280,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/systemeio
   direction: third-party
   category: Marketing
@@ -267,6 +291,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/teachworks
   direction: third-party
   category: Online Courses
@@ -277,6 +302,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/wix
   direction: third-party
   category: Website Builders
@@ -287,6 +313,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/discord
   direction: third-party
   category: Team Chat
@@ -297,6 +324,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/google-forms
   direction: third-party
   category: Forms & Surveys
@@ -307,6 +335,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/freshbooks
   direction: third-party
   category: Accounting
@@ -317,6 +346,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/beacon
   direction: third-party
   category: CRM (Customer Relationship Management)
@@ -327,6 +357,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/zoho-crm
   direction: third-party
   category: CRM (Customer Relationship Management)
@@ -337,6 +368,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/xperiencify
   direction: third-party
   category: Online Courses
@@ -347,6 +379,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/servicem8
   direction: third-party
   category: CRM (Customer Relationship Management)
@@ -357,6 +390,7 @@ edges:
   partner_candidate: null
   type: marketplace
   marketplace: zapier
+  channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/invoice-ninja
   direction: third-party
   category: Proposal & Invoice Management
