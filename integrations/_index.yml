@@ -129,6 +129,168 @@
   source: template
   status: pending-generation
   arazzo: null
+- slug: gocardless-chargebee
+  label: Chargebee
+  partner: chargebee
+  partner_name: Chargebee
+  category: Subscription billing
+  use_case: Cut failed payments and churn for subscription billing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/chargebee
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-intuit-quickbooks
+  label: Intuit QuickBooks
+  partner: quickbooks
+  partner_name: Intuit QuickBooks
+  category: Accounting
+  use_case: Get paid straight from your customers' bank accounts
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/intuit-quickbooks
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-kraken
+  label: Kraken
+  partner: kraken
+  partner_name: Kraken
+  category: Energy & utilities
+  use_case: Faster energy bills and refunds, powered by Kraken
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/kraken
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-sage
+  label: Sage
+  partner: sage
+  partner_name: Sage
+  category: Accounting
+  use_case: Automate payment collection, reconciled instantly in Sage
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/sage
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-xero
+  label: Xero
+  partner: xero
+  partner_name: Xero
+  category: Accounting
+  use_case: Get invoices paid automatically, without the chasing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/xero
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-zuora
+  label: Zuora
+  partner: zuora
+  partner_name: Zuora
+  category: Subscription billing
+  use_case: Cut subscription churn with smarter recurring billing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/zuora
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-access-raise
+  label: Access Raise
+  partner_name: Access Raise
+  category: Charity & non-profit
+  use_case: Grow recurring donations without the admin
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/access-raise
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-aryza
+  label: Aryza
+  partner_name: Aryza
+  category: Financial Services
+  use_case: Helping financial services improve efficiency, compliance and customer outcomes
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/aryza
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-asperato
+  label: Asperato
+  partner_name: Asperato
+  category: CRM
+  use_case: Collect payments without ever leaving Salesforce
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/asperato
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-astral-365
+  label: Astral 365
+  partner_name: Astral 365
+  category: CRM
+  use_case: Collect payments automatically inside Business Central
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/astral365
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-beacon-crm
+  label: Beacon CRM
+  partner_name: Beacon CRM
+  category: Charity & non-profit
+  use_case: Manage your regular giving seamlessly in Beacon
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/beacon-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-billingbooth
+  label: Billingbooth
+  partner_name: Billingbooth
+  category: Energy & utilities
+  use_case: Simplify telecoms billing and get paid faster
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://gocardless.com/integrations/billingbooth
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
 - slug: gocardless-airtable
   label: Airtable
   partner: airtable
@@ -162,18 +324,6 @@
   marketplace: zapier
   channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/shopify
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-xero
-  label: Xero
-  partner: xero
-  partner_name: Xero
-  category: Accounting
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/xero
   source: edge
   status: pending-generation
   arazzo: null
@@ -436,152 +586,4 @@
   evidence: https://zapier.com/apps/gocardless/integrations/invoice-ninja
   source: edge
   status: pending-generation
-  arazzo: null
-- slug: gocardless-chargebee
-  label: Chargebee
-  partner: chargebee
-  partner_name: Chargebee
-  category: Subscription billing
-  use_case: Cut failed payments and churn for subscription billing
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://gocardless.com/integrations/chargebee
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-intuit-quickbooks
-  label: Intuit QuickBooks
-  partner: quickbooks
-  partner_name: Intuit QuickBooks
-  category: Accounting
-  use_case: Get paid straight from your customers' bank accounts
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://gocardless.com/integrations/intuit-quickbooks
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-kraken
-  label: Kraken
-  partner: kraken
-  partner_name: Kraken
-  category: Energy & utilities
-  use_case: Faster energy bills and refunds, powered by Kraken
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://gocardless.com/integrations/kraken
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-sage
-  label: Sage
-  partner: sage
-  partner_name: Sage
-  category: Accounting
-  use_case: Automate payment collection, reconciled instantly in Sage
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://gocardless.com/integrations/sage
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-zuora
-  label: Zuora
-  partner: zuora
-  partner_name: Zuora
-  category: Subscription billing
-  use_case: Cut subscription churn with smarter recurring billing
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://gocardless.com/integrations/zuora
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-access-raise
-  label: Access Raise
-  partner_name: Access Raise
-  category: Charity & non-profit
-  use_case: Grow recurring donations without the admin
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://gocardless.com/integrations/access-raise
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-aryza
-  label: Aryza
-  partner_name: Aryza
-  category: Financial Services
-  use_case: Helping financial services improve efficiency, compliance and customer outcomes
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://gocardless.com/integrations/aryza
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-asperato
-  label: Asperato
-  partner_name: Asperato
-  category: CRM
-  use_case: Collect payments without ever leaving Salesforce
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://gocardless.com/integrations/asperato
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-astral-365
-  label: Astral 365
-  partner_name: Astral 365
-  category: CRM
-  use_case: Collect payments automatically inside Business Central
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://gocardless.com/integrations/astral365
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-beacon-crm
-  label: Beacon CRM
-  partner_name: Beacon CRM
-  category: Charity & non-profit
-  use_case: Manage your regular giving seamlessly in Beacon
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://gocardless.com/integrations/beacon-crm
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-billingbooth
-  label: Billingbooth
-  partner_name: Billingbooth
-  category: Energy & utilities
-  use_case: Simplify telecoms billing and get paid faster
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://gocardless.com/integrations/billingbooth
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
   arazzo: null
