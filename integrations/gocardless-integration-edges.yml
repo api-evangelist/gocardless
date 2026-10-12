@@ -9,6 +9,7 @@ checked:
 - https://gocardless.com/partners/
 - https://monid.ai/tools/gocardless
 - https://n8n.io/integrations/gocardless/
+- https://www.openbanking.org.uk/regulated-providers/gocardless-ltd/
 - https://zapier.com/apps/gocardless/integrations
 summary: null
 marketplace_apps:
@@ -536,6 +537,23 @@ edges:
   direction: third-party
   category: Proposal & Invoice Management
   partner_url: https://www.invoiceninja.com/
+- partner_name: UK Open Banking
+  partner: null
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.openbanking.org.uk/regulated-providers/gocardless-ltd/
+  contract_reference:
+    register: UK Open Banking regulated providers (OBL directory)
+    spec_file: null
+    role: Third Party Providers
+    registered_name: GoCardless Ltd
+    register_id: https://register.fca.org.uk/s/firm?id=001b000000NMgMPAA1
+    matched_domain: gocardless.com
+    api_families: null
+    detected_by: sweep-standard-registers.py
+    detected: '2026-10-12'
 templates:
 - title: Create Slack channel messages for new GoCardless mandates
   url: https://zapier.com/apps/gocardless/integrations/slack/1384435/create-slack-channel-messages-for-new-gocardless-mandates

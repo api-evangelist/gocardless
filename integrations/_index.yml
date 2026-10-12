@@ -587,3 +587,23 @@
   source: edge
   status: pending-generation
   arazzo: null
+- slug: gocardless-uk-open-banking
+  label: UK Open Banking
+  partner_name: UK Open Banking
+  type: contract
+  channel: regulator-register
+  evidence: https://www.openbanking.org.uk/regulated-providers/gocardless-ltd/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: UK Open Banking regulated providers (OBL directory)
+    spec_file: null
+    role: Third Party Providers
+    registered_name: GoCardless Ltd
+    register_id: https://register.fca.org.uk/s/firm?id=001b000000NMgMPAA1
+    matched_domain: gocardless.com
+    api_families: null
+    detected_by: sweep-standard-registers.py
+    detected: '2026-10-12'
+  status: not-a-workflow
+  arazzo: null
