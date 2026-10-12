@@ -7,6 +7,8 @@ checked:
 - https://monid.ai/tools/gocardless
 - https://n8n.io/integrations/gocardless/
 - https://zapier.com/apps/gocardless/integrations
+- https://gocardless.com/partners/
+- https://gocardless.com/integrations
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -64,6 +66,24 @@ marketplace_apps:
     label: Search for a Payout
   - key: search_payout_items
     label: Search for Payout Items by Payout ID
+- marketplace: own
+  channel: partner-built
+  app: gocardless
+  url: https://gocardless.com/partners/
+  app_count: null
+  categories:
+  - Accounting
+  - Charity & non-profit
+  - CRM
+  - eCommerce
+  - Education & childcare
+  - Energy & utilities
+  - Financial Services
+  - Health & fitness
+  - Insurance
+  - Property
+  - Sports & member clubs
+  - Subscription billing
 edges:
 - partner_name: Airtable
   partner: airtable
@@ -395,6 +415,126 @@ edges:
   direction: third-party
   category: Proposal & Invoice Management
   partner_url: https://www.invoiceninja.com/
+- partner_name: Chargebee
+  partner: chargebee
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/chargebee
+  category: Subscription billing
+  use_case: Cut failed payments and churn for subscription billing
+- partner_name: Intuit QuickBooks
+  partner: quickbooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/intuit-quickbooks
+  category: Accounting
+  use_case: Get paid straight from your customers' bank accounts
+- partner_name: Kraken
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/kraken
+  category: Energy & utilities
+  use_case: Faster energy bills and refunds, powered by Kraken
+- partner_name: Sage
+  partner: sage
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/sage
+  category: Accounting
+  use_case: Automate payment collection, reconciled instantly in Sage
+- partner_name: Xero
+  partner: xero
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/xero
+  category: Accounting
+  use_case: Get invoices paid automatically, without the chasing
+- partner_name: Zuora
+  partner: zuora
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/zuora
+  category: Subscription billing
+  use_case: Cut subscription churn with smarter recurring billing
+- partner_name: Access Raise
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/access-raise
+  category: Charity & non-profit
+  use_case: Grow recurring donations without the admin
+- partner_name: Aryza
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/aryza
+  category: Financial Services
+  use_case: Helping financial services improve efficiency, compliance and customer outcomes
+- partner_name: Asperato
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/asperato
+  category: CRM
+  use_case: Collect payments without ever leaving Salesforce
+- partner_name: Astral 365
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/astral365
+  category: CRM
+  use_case: Collect payments automatically inside Business Central
+- partner_name: Beacon CRM
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/beacon-crm
+  category: Charity & non-profit
+  use_case: Manage your regular giving seamlessly in Beacon
+- partner_name: Billingbooth
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://gocardless.com/integrations/billingbooth
+  category: Energy & utilities
+  use_case: Simplify telecoms billing and get paid faster
 templates:
 - title: Create Slack channel messages for new GoCardless mandates
   url: https://zapier.com/apps/gocardless/integrations/slack/1384435/create-slack-channel-messages-for-new-gocardless-mandates
