@@ -10,6 +10,7 @@ checked:
 - https://gocardless.com/partners/
 - https://monid.ai/tools/gocardless
 - https://n8n.io/integrations/gocardless/
+- https://registry.financialdataexchange.org/
 - https://www.openbanking.org.uk/regulated-providers/gocardless-ltd/
 - https://zapier.com/apps/gocardless/integrations
 summary: null
@@ -572,6 +573,30 @@ edges:
   - Verified creator
   detected_by: sweep-devtools.py
   detected: '2026-10-14'
+- partner_name: FDX (Financial Data Exchange)
+  partner: fdx
+  type: contract
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://registry.financialdataexchange.org/
+  contract_reference:
+    register: FDX Registry
+    standard: FDX API
+    spec_file: null
+    register_api: https://registry.financialdataexchange.org/fdxregistryapi/organizations/search/listingTags
+    role: data-provider,data-recipient
+    member_type: MEMBER
+    registered_name: Go Cardless LTD
+    register_id: 381
+    registered_website: https://gocardless.com/
+    country: United Kingdom
+    fdx_version: null
+    matched_by: domain:gocardless.com
+    detected_by: sweep-fdx.py
+    detected: '2026-10-14'
+  detected_by: sweep-fdx.py
+  first_seen: '2026-10-14'
 templates:
 - title: Create Slack channel messages for new GoCardless mandates
   url: https://zapier.com/apps/gocardless/integrations/slack/1384435/create-slack-channel-messages-for-new-gocardless-mandates
