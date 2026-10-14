@@ -11,6 +11,7 @@ checked:
 - https://monid.ai/tools/gocardless
 - https://n8n.io/integrations/gocardless/
 - https://registry.financialdataexchange.org/
+- https://registry.modelcontextprotocol.io/v0/servers
 - https://www.openbanking.org.uk/regulated-providers/gocardless-ltd/
 - https://zapier.com/apps/gocardless/integrations
 summary: null
@@ -539,23 +540,6 @@ edges:
   direction: third-party
   category: Proposal & Invoice Management
   partner_url: https://www.invoiceninja.com/
-- partner_name: UK Open Banking
-  partner: null
-  type: contract
-  channel: regulator-register
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://www.openbanking.org.uk/regulated-providers/gocardless-ltd/
-  contract_reference:
-    register: UK Open Banking regulated providers (OBL directory)
-    spec_file: null
-    role: Third Party Providers
-    registered_name: GoCardless Ltd
-    register_id: https://register.fca.org.uk/s/firm?id=001b000000NMgMPAA1
-    matched_domain: gocardless.com
-    api_families: null
-    detected_by: sweep-standard-registers.py
-    detected: '2026-10-12'
 - partner_name: GitHub Marketplace (actions)
   partner: github-actions
   partner_match: aggregator
@@ -573,6 +557,54 @@ edges:
   - Verified creator
   detected_by: sweep-devtools.py
   detected: '2026-10-14'
+- partner_name: MCP Registry
+  partner: mcp
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=com.gocardless
+  contract_reference:
+    register: registry.modelcontextprotocol.io
+    spec_file: null
+    role: mcp-server-listing
+    registered_name: com.gocardless/gc-mcp
+    register_id: com.gocardless/gc-mcp
+    detected_by: sweep-agent-tools.py
+    detected: '2026-10-14'
+  mcp_registry:
+    servers:
+    - com.gocardless/gc-mcp
+    hosted_remote: 1
+    local_package: 0
+    transports:
+      streamable-http: 1
+    auth_declared: 0
+    catalog_declared: true
+    namespace_domains:
+    - gocardless.com
+  matched_by:
+  - namespace-domain
+  detected_by: sweep-agent-tools.py
+  first_seen: '2026-10-14'
+- partner_name: UK Open Banking
+  partner: null
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.openbanking.org.uk/regulated-providers/gocardless-ltd/
+  contract_reference:
+    register: UK Open Banking regulated providers (OBL directory)
+    spec_file: null
+    role: Third Party Providers
+    registered_name: GoCardless Ltd
+    register_id: https://register.fca.org.uk/s/firm?id=001b000000NMgMPAA1
+    matched_domain: gocardless.com
+    api_families: null
+    detected_by: sweep-standard-registers.py
+    detected: '2026-10-14'
 - partner_name: FDX (Financial Data Exchange)
   partner: fdx
   type: contract

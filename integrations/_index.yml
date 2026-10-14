@@ -584,6 +584,37 @@
   source: edge
   status: pending-generation
   arazzo: null
+- slug: gocardless-github-marketplace-actions
+  label: GitHub Marketplace (actions)
+  partner: github-actions
+  partner_name: GitHub Marketplace (actions)
+  type: marketplace
+  marketplace: github-actions
+  channel: partner-built
+  evidence: https://github.com/marketplace/actions/publish-techdocs
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-mcp-registry
+  label: MCP Registry
+  partner: mcp
+  partner_name: MCP Registry
+  type: register
+  channel: standard-directory
+  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=com.gocardless
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: registry.modelcontextprotocol.io
+    spec_file: null
+    role: mcp-server-listing
+    registered_name: com.gocardless/gc-mcp
+    register_id: com.gocardless/gc-mcp
+    detected_by: sweep-agent-tools.py
+    detected: '2026-10-14'
+  status: not-a-workflow
+  arazzo: null
 - slug: gocardless-uk-open-banking
   label: UK Open Banking
   partner_name: UK Open Banking
@@ -601,19 +632,7 @@
     matched_domain: gocardless.com
     api_families: null
     detected_by: sweep-standard-registers.py
-    detected: '2026-10-12'
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-github-marketplace-actions
-  label: GitHub Marketplace (actions)
-  partner: github-actions
-  partner_name: GitHub Marketplace (actions)
-  type: marketplace
-  marketplace: github-actions
-  channel: partner-built
-  evidence: https://github.com/marketplace/actions/publish-techdocs
-  source: edge
-  relationship: platform-app
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: gocardless-fdx-financial-data-exchange
