@@ -159,7 +159,6 @@
   arazzo: null
 - slug: gocardless-kraken
   label: Kraken
-  partner: kraken
   partner_name: Kraken
   category: Energy & utilities
   use_case: Faster energy bills and refunds, powered by Kraken
@@ -329,7 +328,6 @@
   arazzo: null
 - slug: gocardless-monday-com
   label: monday.com
-  partner: monday-com
   partner_name: monday.com
   category: Project Management
   type: marketplace
@@ -337,7 +335,7 @@
   channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/monday
   source: edge
-  status: pending-generation
+  status: pending-partner-spec
   arazzo: null
 - slug: gocardless-quickbooks-online
   label: QuickBooks Online
@@ -448,7 +446,6 @@
   arazzo: null
 - slug: gocardless-microsoft-excel
   label: Microsoft Excel
-  partner: microsoft-excel
   partner_name: Microsoft Excel
   category: Microsoft
   type: marketplace
@@ -456,7 +453,7 @@
   channel: ipaas-usage
   evidence: https://zapier.com/apps/gocardless/integrations/excel
   source: edge
-  status: pending-generation
+  status: pending-partner-spec
   arazzo: null
 - slug: gocardless-systeme-io
   label: systeme.io
@@ -605,5 +602,17 @@
     api_families: null
     detected_by: sweep-standard-registers.py
     detected: '2026-10-12'
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-github-marketplace-actions
+  label: GitHub Marketplace (actions)
+  partner: github-actions
+  partner_name: GitHub Marketplace (actions)
+  type: marketplace
+  marketplace: github-actions
+  channel: partner-built
+  evidence: https://github.com/marketplace/actions/publish-techdocs
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null

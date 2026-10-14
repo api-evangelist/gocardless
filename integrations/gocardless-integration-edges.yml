@@ -5,6 +5,7 @@ source:
 - https://zapier.com/apps/gocardless/integrations
 checked:
 - https://composio.dev/toolkits/gocardless
+- https://github.com/marketplace?type=actions
 - https://gocardless.com/integrations
 - https://gocardless.com/partners/
 - https://monid.ai/tools/gocardless
@@ -554,6 +555,23 @@ edges:
     api_families: null
     detected_by: sweep-standard-registers.py
     detected: '2026-10-12'
+- partner_name: GitHub Marketplace (actions)
+  partner: github-actions
+  partner_match: aggregator
+  type: marketplace
+  marketplace: github-actions
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://github.com/marketplace/actions/publish-techdocs
+  listing_count: 1
+  apps:
+  - Publish TechDocs
+  publisher_name: GoCardless
+  badges:
+  - Verified creator
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
 templates:
 - title: Create Slack channel messages for new GoCardless mandates
   url: https://zapier.com/apps/gocardless/integrations/slack/1384435/create-slack-channel-messages-for-new-gocardless-mandates
