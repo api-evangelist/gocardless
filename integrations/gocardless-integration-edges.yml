@@ -14,6 +14,7 @@ checked:
 - https://registry.modelcontextprotocol.io/v0/servers
 - https://www.openbanking.org.uk/regulated-providers/gocardless-ltd/
 - https://zapier.com/apps/gocardless/integrations
+- woocommerce/integrations/woocommerce-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: own
@@ -629,6 +630,23 @@ edges:
     detected: '2026-10-14'
   detected_by: sweep-fdx.py
   first_seen: '2026-10-14'
+- partner_name: WooCommerce (own)
+  partner: woocommerce
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://woocommerce.com/products/gocardless/
+  mirror_of: woocommerce/integrations/woocommerce-integration-edges.yml
+  apps:
+  - GoCardless
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  category: extension
 templates:
 - title: Create Slack channel messages for new GoCardless mandates
   url: https://zapier.com/apps/gocardless/integrations/slack/1384435/create-slack-channel-messages-for-new-gocardless-mandates
