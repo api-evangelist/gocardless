@@ -596,25 +596,6 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: gocardless-mcp-registry
-  label: MCP Registry
-  partner: mcp
-  partner_name: MCP Registry
-  type: register
-  channel: standard-directory
-  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=com.gocardless
-  source: edge
-  relationship: standard-participant
-  contract_reference:
-    register: registry.modelcontextprotocol.io
-    spec_file: null
-    role: mcp-server-listing
-    registered_name: com.gocardless/gc-mcp
-    register_id: com.gocardless/gc-mcp
-    detected_by: sweep-agent-tools.py
-    detected: '2026-10-14'
-  status: not-a-workflow
-  arazzo: null
 - slug: gocardless-uk-open-banking
   label: UK Open Banking
   partner_name: UK Open Banking
@@ -672,5 +653,81 @@
   evidence: https://woocommerce.com/products/gocardless/
   source: edge
   relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-mcp-registry
+  label: MCP Registry
+  partner: mcp
+  partner_name: MCP Registry
+  type: register
+  channel: standard-directory
+  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=com.gocardless
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: registry.modelcontextprotocol.io
+    spec_file: null
+    role: mcp-server-listing
+    registered_name: com.gocardless/gc-mcp
+    register_id: com.gocardless/gc-mcp
+    detected_by: sweep-agent-tools.py
+    detected: '2026-10-15'
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-zapier
+  label: Zapier
+  partner: zapier
+  partner_name: Zapier
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  evidence: https://zapier.com/apps/gocardless/integrations
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: GoCardless
+    matched_domain: gocardless.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: gocardless
+    beta: false
+    builder: unknown (not in the directory record)
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-fincen-msb-registration
+  label: FinCEN (MSB registration)
+  partner_name: FinCEN (MSB registration)
+  category: Money services business
+  type: contract
+  channel: regulator-register
+  evidence: https://msb.fincen.gov/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: FinCEN MSB Registrant Search (msb.fincen.gov, full list export)
+    spec_file: null
+    standard: FinCEN MSB registration (US Bank Secrecy Act)
+    role: fincen-msb-registrant
+    registered_name: GoCardless Inc.
+    dba_name: null
+    register_id: GoCardless Inc.
+    matched_domain: gocardless.com
+    matched_by: domain
+    identity: wikidata Q111418549 'GoCardless' P856 https://gocardless.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    msb_activities:
+    - 409 money transmitter
+    - 415 dealer in foreign exchange
+    states_of_activity: 15
+    received_date: 11/13/2025
+    signal_note: 'participation only: an MSB registration is not a licence or a certification; activities and states
+      are context, never counted'
+    detected_by: sweep-regtech-aml.py
+    detected: '2026-10-15'
   status: not-a-workflow
   arazzo: null
