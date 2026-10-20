@@ -15,6 +15,7 @@
   evidence: https://zapier.com/apps/gocardless/integrations/slack/1384435/create-slack-channel-messages-for-new-gocardless-mandates
   template: https://zapier.com/apps/gocardless/integrations/slack/1384435/create-slack-channel-messages-for-new-gocardless-mandates
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: gocardless-post-new-failed-gocardless-payments-to-slack
@@ -29,6 +30,7 @@
   evidence: https://zapier.com/apps/gocardless/integrations/slack/1160491/post-new-failed-gocardless-payments-to-slack
   template: https://zapier.com/apps/gocardless/integrations/slack/1160491/post-new-failed-gocardless-payments-to-slack
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: gocardless-notify-on-slack-with-a-channel-message-when-mandates-are-cancelled-in-gocardles
@@ -43,6 +45,7 @@
   evidence: https://zapier.com/apps/gocardless/integrations/slack/1604271/notify-on-slack-with-a-channel-message-when-mandates-are-cancelled-in-gocardless
   template: https://zapier.com/apps/gocardless/integrations/slack/1604271/notify-on-slack-with-a-channel-message-when-mandates-are-cancelled-in-gocardless
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: gocardless-record-gocardless-failed-payments-in-google-sheets-rows
@@ -57,6 +60,7 @@
   evidence: https://zapier.com/apps/gocardless/integrations/google-sheets/1636165/record-gocardless-failed-payments-in-google-sheets-rows
   template: https://zapier.com/apps/gocardless/integrations/google-sheets/1636165/record-gocardless-failed-payments-in-google-sheets-rows
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: gocardless-create-mailchimp-subscribers-from-new-gocardless-instant-payments-or-mandates
@@ -71,6 +75,7 @@
   evidence: https://zapier.com/apps/gocardless/integrations/mailchimp/1161434/create-mailchimp-subscribers-from-new-gocardless-instant-payments-or-mandates
   template: https://zapier.com/apps/gocardless/integrations/mailchimp/1161434/create-mailchimp-subscribers-from-new-gocardless-instant-payments-or-mandates
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: gocardless-send-emails-in-gmail-for-failed-payments-in-gocardless
@@ -85,6 +90,7 @@
   evidence: https://zapier.com/apps/gmail/integrations/gocardless/1240446/send-emails-in-gmail-for-failed-payments-in-gocardless
   template: https://zapier.com/apps/gmail/integrations/gocardless/1240446/send-emails-in-gmail-for-failed-payments-in-gocardless
   source: template
+  relationship: ipaas-bridge
   status: pending-partner-spec
   arazzo: null
 - slug: gocardless-create-slack-private-channel-messages-for-new-gocardless-mandates
@@ -99,6 +105,7 @@
   evidence: https://zapier.com/apps/gocardless/integrations/slack/1312742/create-slack-private-channel-messages-for-new-gocardless-mandates
   template: https://zapier.com/apps/gocardless/integrations/slack/1312742/create-slack-private-channel-messages-for-new-gocardless-mandates
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: gocardless-add-new-gocardless-completed-billing-requests-to-google-sheets
@@ -113,6 +120,7 @@
   evidence: https://zapier.com/apps/gocardless/integrations/google-sheets/1161301/add-new-gocardless-completed-billing-requests-to-google-sheets
   template: https://zapier.com/apps/gocardless/integrations/google-sheets/1161301/add-new-gocardless-completed-billing-requests-to-google-sheets
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: gocardless-add-newly-cancelled-gocardless-mandates-to-google-sheets-rows
@@ -127,6 +135,7 @@
   evidence: https://zapier.com/apps/gocardless/integrations/google-sheets/1161336/add-newly-cancelled-gocardless-mandates-to-google-sheets-rows
   template: https://zapier.com/apps/gocardless/integrations/google-sheets/1161336/add-newly-cancelled-gocardless-mandates-to-google-sheets-rows
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: gocardless-chargebee
@@ -290,300 +299,6 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: gocardless-airtable
-  label: Airtable
-  partner: airtable
-  partner_name: Airtable
-  category: Databases
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/airtable
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-hubspot
-  label: HubSpot
-  partner: hubspot
-  partner_name: HubSpot
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/hubspot
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-shopify
-  label: Shopify
-  partner: shopify
-  partner_name: Shopify
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/shopify
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-monday-com
-  label: monday.com
-  partner_name: monday.com
-  category: Project Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/monday
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: gocardless-quickbooks-online
-  label: QuickBooks Online
-  partner_name: QuickBooks Online
-  category: Accounting
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/quickbooks
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: gocardless-notion
-  label: Notion
-  partner: notion
-  partner_name: Notion
-  category: Task Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/notion
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-microsoft-outlook
-  label: Microsoft Outlook
-  partner: microsoft-outlook
-  partner_name: Microsoft Outlook
-  category: Calendar
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/microsoft-outlook
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-bitrix24-crm
-  label: Bitrix24 CRM
-  partner: bitrix24
-  partner_name: Bitrix24 CRM
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/bitrix24-crm-new
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-mailerlite
-  label: MailerLite
-  partner: mailerlite
-  partner_name: MailerLite
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/mailerlite
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-activecampaign
-  label: ActiveCampaign
-  partner: activecampaign
-  partner_name: ActiveCampaign
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/activecampaign
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-brevo
-  label: Brevo
-  partner: brevo
-  partner_name: Brevo
-  category: Email Newsletters
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/brevo
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-close
-  label: Close
-  partner: close
-  partner_name: Close
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/close
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-clickup
-  label: ClickUp
-  partner: clickup
-  partner_name: ClickUp
-  category: Project Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/clickup
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-microsoft-excel
-  label: Microsoft Excel
-  partner_name: Microsoft Excel
-  category: Microsoft
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/excel
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: gocardless-systeme-io
-  label: systeme.io
-  partner_name: systeme.io
-  category: Marketing
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/systemeio
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: gocardless-teachworks
-  label: Teachworks
-  partner: teachworks
-  partner_name: Teachworks
-  category: Online Courses
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/teachworks
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-wix
-  label: Wix
-  partner: wix
-  partner_name: Wix
-  category: Website Builders
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/wix
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-discord
-  label: Discord
-  partner: discord
-  partner_name: Discord
-  category: Team Chat
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/discord
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-google-forms
-  label: Google Forms
-  partner: google-forms
-  partner_name: Google Forms
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/google-forms
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-freshbooks
-  label: FreshBooks
-  partner: freshbooks
-  partner_name: FreshBooks
-  category: Accounting
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/freshbooks
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-beacon
-  label: Beacon
-  partner_name: Beacon
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/beacon
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: gocardless-zoho-crm
-  label: Zoho CRM
-  partner: zoho-crm
-  partner_name: Zoho CRM
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/zoho-crm
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-xperiencify
-  label: Xperiencify
-  partner_name: Xperiencify
-  category: Online Courses
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/xperiencify
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: gocardless-servicem8
-  label: ServiceM8
-  partner: servicem8
-  partner_name: ServiceM8
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/servicem8
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: gocardless-invoice-ninja
-  label: Invoice Ninja
-  partner: invoice-ninja
-  partner_name: Invoice Ninja
-  category: Proposal & Invoice Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/gocardless/integrations/invoice-ninja
-  source: edge
-  status: pending-generation
-  arazzo: null
 - slug: gocardless-github-marketplace-actions
   label: GitHub Marketplace (actions)
   partner: github-actions
@@ -616,32 +331,6 @@
     detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
-- slug: gocardless-fdx-financial-data-exchange
-  label: FDX (Financial Data Exchange)
-  partner: fdx
-  partner_name: FDX (Financial Data Exchange)
-  type: contract
-  channel: standard-directory
-  evidence: https://registry.financialdataexchange.org/
-  source: edge
-  relationship: standard-participant
-  contract_reference:
-    register: FDX Registry
-    standard: FDX API
-    spec_file: null
-    register_api: https://registry.financialdataexchange.org/fdxregistryapi/organizations/search/listingTags
-    role: data-provider,data-recipient
-    member_type: MEMBER
-    registered_name: Go Cardless LTD
-    register_id: 381
-    registered_website: https://gocardless.com/
-    country: United Kingdom
-    fdx_version: null
-    matched_by: domain:gocardless.com
-    detected_by: sweep-fdx.py
-    detected: '2026-10-14'
-  status: not-a-workflow
-  arazzo: null
 - slug: gocardless-woocommerce-own
   label: WooCommerce (own)
   partner: woocommerce
@@ -653,25 +342,6 @@
   evidence: https://woocommerce.com/products/gocardless/
   source: edge
   relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: gocardless-mcp-registry
-  label: MCP Registry
-  partner: mcp
-  partner_name: MCP Registry
-  type: register
-  channel: standard-directory
-  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=com.gocardless
-  source: edge
-  relationship: standard-participant
-  contract_reference:
-    register: registry.modelcontextprotocol.io
-    spec_file: null
-    role: mcp-server-listing
-    registered_name: com.gocardless/gc-mcp
-    register_id: com.gocardless/gc-mcp
-    detected_by: sweep-agent-tools.py
-    detected: '2026-10-15'
   status: not-a-workflow
   arazzo: null
 - slug: gocardless-zapier
@@ -731,29 +401,23 @@
     detected: '2026-10-15'
   status: not-a-workflow
   arazzo: null
-- slug: gocardless-uk-g-cloud-15-digital-marketplace
-  label: UK G-Cloud 15 (Digital Marketplace)
-  partner_name: UK G-Cloud 15 (Digital Marketplace)
-  category: UK public-sector procurement framework
-  type: marketplace
-  marketplace: g-cloud
-  channel: distribution
-  evidence: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud-15/supplier/93395
+- slug: gocardless-mcp-registry
+  label: MCP Registry
+  partner: mcp
+  partner_name: MCP Registry
+  type: register
+  channel: standard-directory
+  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=com.gocardless
   source: edge
-  relationship: distribution-channel
+  relationship: standard-participant
   contract_reference:
-    register: UK G-Cloud 15 supplier list (Digital Marketplace)
+    register: registry.modelcontextprotocol.io
     spec_file: null
-    role: g-cloud-supplier
-    registered_name: GOCARDLESS LTD
-    register_id: '93395'
-    matched_domain: gocardless.com
-    matched_by: domain
-    domain_source: contact-email
-    signal_note: a framework award is distribution (selling to the public sector), not an integration; kept out
-      of position shares
-    detected_by: sweep-gov-cloud.py
-    detected: '2026-10-15'
+    role: mcp-server-listing
+    registered_name: com.gocardless/gc-mcp
+    register_id: com.gocardless/gc-mcp
+    detected_by: sweep-agent-tools.py
+    detected: '2026-10-19'
   status: not-a-workflow
   arazzo: null
 - slug: gocardless-airbyte
@@ -840,4 +504,376 @@
     - bronze
     builder: 'community (Meltano Hub variant maintainers: airbyte)'
   status: not-a-workflow
+  arazzo: null
+- slug: gocardless-fdx-financial-data-exchange
+  label: FDX (Financial Data Exchange)
+  partner: fdx
+  partner_name: FDX (Financial Data Exchange)
+  type: contract
+  channel: standard-directory
+  evidence: https://registry.financialdataexchange.org/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: FDX Registry
+    standard: FDX API
+    spec_file: null
+    register_api: https://registry.financialdataexchange.org/fdxregistryapi/organizations/search/listingTags
+    role: data-provider,data-recipient
+    member_type: MEMBER
+    registered_name: Go Cardless LTD
+    register_id: 381
+    registered_website: https://gocardless.com/
+    country: United Kingdom
+    fdx_version: null
+    matched_by: domain:gocardless.com
+    detected_by: sweep-fdx.py
+    detected: '2026-10-19'
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-uk-g-cloud-15-digital-marketplace
+  label: UK G-Cloud 15 (Digital Marketplace)
+  partner_name: UK G-Cloud 15 (Digital Marketplace)
+  category: UK public-sector procurement framework
+  type: marketplace
+  marketplace: g-cloud
+  channel: distribution
+  evidence: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud-15/supplier/93395
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: UK G-Cloud 15 supplier list (Digital Marketplace)
+    spec_file: null
+    role: g-cloud-supplier
+    registered_name: GOCARDLESS LTD
+    register_id: '93395'
+    matched_domain: gocardless.com
+    matched_by: domain
+    domain_source: contact-email
+    signal_note: a framework award is distribution (selling to the public sector), not an integration; kept out
+      of position shares
+    detected_by: sweep-gov-cloud.py
+    detected: '2026-10-15'
+  status: not-a-workflow
+  arazzo: null
+- slug: gocardless-airtable
+  label: Airtable
+  partner: airtable
+  partner_name: Airtable
+  category: Databases
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/airtable
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-hubspot
+  label: HubSpot
+  partner: hubspot
+  partner_name: HubSpot
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/hubspot
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-shopify
+  label: Shopify
+  partner: shopify
+  partner_name: Shopify
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/shopify
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-monday-com
+  label: monday.com
+  partner: monday-com
+  partner_name: monday.com
+  category: Project Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/monday
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-quickbooks-online
+  label: QuickBooks Online
+  partner: quickbooks
+  partner_name: QuickBooks Online
+  category: Accounting
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/quickbooks
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: gocardless-microsoft-outlook
+  label: Microsoft Outlook
+  partner: microsoft-outlook
+  partner_name: Microsoft Outlook
+  category: Calendar
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/microsoft-outlook
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-notion
+  label: Notion
+  partner: notion
+  partner_name: Notion
+  category: Task Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/notion
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-bitrix24-crm
+  label: Bitrix24 CRM
+  partner: bitrix24
+  partner_name: Bitrix24 CRM
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/bitrix24-crm-new
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-mailerlite
+  label: MailerLite
+  partner: mailerlite
+  partner_name: MailerLite
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/mailerlite
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-activecampaign
+  label: ActiveCampaign
+  partner: activecampaign
+  partner_name: ActiveCampaign
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/activecampaign
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-brevo
+  label: Brevo
+  partner: brevo
+  partner_name: Brevo
+  category: Email Newsletters
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/brevo
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-close
+  label: Close
+  partner: close
+  partner_name: Close
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/close
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-clickup
+  label: ClickUp
+  partner: clickup
+  partner_name: ClickUp
+  category: Project Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/clickup
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-microsoft-excel
+  label: Microsoft Excel
+  partner_name: Microsoft Excel
+  category: Microsoft
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/excel
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: gocardless-systeme-io
+  label: systeme.io
+  partner_name: systeme.io
+  category: Marketing
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/systemeio
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: gocardless-teachworks
+  label: Teachworks
+  partner: teachworks
+  partner_name: Teachworks
+  category: Online Courses
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/teachworks
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-wix
+  label: Wix
+  partner: wix
+  partner_name: Wix
+  category: Website Builders
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/wix
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-discord
+  label: Discord
+  partner: discord
+  partner_name: Discord
+  category: Team Chat
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/discord
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-google-forms
+  label: Google Forms
+  partner: google-forms
+  partner_name: Google Forms
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/google-forms
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-freshbooks
+  label: FreshBooks
+  partner: freshbooks
+  partner_name: FreshBooks
+  category: Accounting
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/freshbooks
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-beacon
+  label: Beacon
+  partner_name: Beacon
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/beacon
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: gocardless-zoho-crm
+  label: Zoho CRM
+  partner: zoho-crm
+  partner_name: Zoho CRM
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/zoho-crm
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-xperiencify
+  label: Xperiencify
+  partner_name: Xperiencify
+  category: Online Courses
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/xperiencify
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: gocardless-servicem8
+  label: ServiceM8
+  partner: servicem8
+  partner_name: ServiceM8
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/servicem8
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: gocardless-invoice-ninja
+  label: Invoice Ninja
+  partner: invoice-ninja
+  partner_name: Invoice Ninja
+  category: Proposal & Invoice Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/gocardless/integrations/invoice-ninja
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
   arazzo: null
