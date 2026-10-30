@@ -1,4 +1,4 @@
-# GoCardless (gocardless)
+# GoCardless
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,71 +66,178 @@
 
 GoCardless is a global account-to-account payments platform specializing in pull-based bank debit (UK Bacs, SEPA Direct Debit, ACH, BECS, PAD, Autogiro) and open-banking instant bank payments, used by businesses to collect recurring subscriptions, invoices, and one-off payments directly from customer bank accounts. The GoCardless REST API exposes customers, bank accounts, mandates, payments, payouts, subscriptions, refunds, events, webhooks, and verification flows. Authentication uses Bearer access tokens issued from the dashboard, with separate sandbox and live environments; every request must include a GoCardless-Version header.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/apis.yml)
+**Areas:** Payments · Direct Debit · Bank Debit · Recurring Payments · Subscription · SEPA · Bacs · ACH · Open Banking · Fintech
 
-## Scope
+## GoCardless on APIs.io
 
-- **Type:** Index
+Everything profiled for GoCardless is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/gocardless/](https://apis.io/providers/gocardless/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (16)
 
-- Payments
-- Direct Debit
-- Bank Debit
-- Recurring Payments
-- Subscriptions
-- SEPA
-- Bacs
-- ACH
-- Open Banking
-- Fintech
+- [GoCardless Billing Request Flows API](https://apis.io/apis/gocardless/gocardless-billing-request-flows-api/) — The billing_request_flows API from GoCardless — 2 operation(s) for billing_request_flows.
+- [GoCardless Billing Requests API](https://apis.io/apis/gocardless/gocardless-billing-requests-api/) — The billing_requests API from GoCardless — 2 operation(s) for billing_requests.
+- [GoCardless Blocks API](https://apis.io/apis/gocardless/gocardless-blocks-api/) — The blocks API from GoCardless — 2 operation(s) for blocks.
+- [GoCardless Creditor Bank Accounts API](https://apis.io/apis/gocardless/gocardless-creditor-bank-accounts-api/) — The creditor_bank_accounts API from GoCardless — 1 operation(s) for creditor_bank_accounts.
+- [GoCardless Creditors API](https://apis.io/apis/gocardless/gocardless-creditors-api/) — The creditors API from GoCardless — 2 operation(s) for creditors.
+- [GoCardless Customer Bank Accounts API](https://apis.io/apis/gocardless/gocardless-customer-bank-accounts-api/) — The customer_bank_accounts API from GoCardless — 2 operation(s) for customer_bank_accounts.
+- [GoCardless Customers API](https://apis.io/apis/gocardless/gocardless-customers-api/) — The customers API from GoCardless — 2 operation(s) for customers.
+- [GoCardless Events API](https://apis.io/apis/gocardless/gocardless-events-api/) — The events API from GoCardless — 2 operation(s) for events.
+- [GoCardless Instalment Schedules API](https://apis.io/apis/gocardless/gocardless-instalment-schedules-api/) — The instalment_schedules API from GoCardless — 2 operation(s) for instalment_schedules.
+- [GoCardless Institutions API](https://apis.io/apis/gocardless/gocardless-institutions-api/) — The institutions API from GoCardless — 1 operation(s) for institutions.
+- [GoCardless Mandates API](https://apis.io/apis/gocardless/gocardless-mandates-api/) — The mandates API from GoCardless — 3 operation(s) for mandates.
+- [GoCardless Payer Authorisations API](https://apis.io/apis/gocardless/gocardless-payer-authorisations-api/) — The payer_authorisations API from GoCardless — 2 operation(s) for payer_authorisations.
+- [GoCardless Payments API](https://apis.io/apis/gocardless/gocardless-payments-api/) — The payments API from GoCardless — 3 operation(s) for payments.
+- [GoCardless Payouts API](https://apis.io/apis/gocardless/gocardless-payouts-api/) — The payouts API from GoCardless — 2 operation(s) for payouts.
+- [GoCardless Refunds API](https://apis.io/apis/gocardless/gocardless-refunds-api/) — The refunds API from GoCardless — 2 operation(s) for refunds.
+- [GoCardless Subscriptions API](https://apis.io/apis/gocardless/gocardless-subscriptions-api/) — The subscriptions API from GoCardless — 3 operation(s) for subscriptions.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-30
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### AsyncAPI (1)
 
-### GoCardless REST API
+Event-driven and webhook contracts.
 
-Versioned REST API for collecting bank debit and open-banking payments worldwide. Resources include customers, customer bank accounts, mandates, payments, payouts, subscriptions, refunds, billing requests, events, and webhook endpoints. Authentication uses Bearer access tokens; a GoCardless-Version header is required on every request. Sandbox available at api-sandbox.gocardless.com.
+- [GoCardless Webhooks](https://apis.io/asyncapis/gocardless/gocardless-asyncapi/)
 
-- **Human URL:** [https://developer.gocardless.com/api-reference/](https://developer.gocardless.com/api-reference/)
-- **Base URL:** `https://api.gocardless.com`
+#### Event channels (1)
 
-#### Tags
+Individual events and webhooks the provider emits.
 
-- Payments
-- Direct Debit
-- Subscriptions
-- Bearer Auth
-- Versioned API
+- [/](https://apis.io/channels/gocardless/untitled/)
 
-#### Properties
+#### MCP servers (1)
 
-- [Documentation](https://developer.gocardless.com/api-reference/)
-- [OpenAPI](https://developer.gocardless.com/api-reference/openapi) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Getting Started](https://developer.gocardless.com/getting-started/set-up/)
-- [Sandbox](https://api-sandbox.gocardless.com)
-- [Postman  Collection](https://www.postman.com/gocardlessapi/gocardless-api/overview)
-- [AsyncAPI](https://raw.githubusercontent.com/api-evangelist/gocardless/refs/heads/main/asyncapi/gocardless-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [Postman Collection](collections/gocardless.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/gocardless.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Model Context Protocol servers that expose the API to agents.
 
-## Common Properties
+- [gocardless](https://apis.io/servers/gocardless/gocardless/)
 
-- [GitHub Organization](https://github.com/gocardless)
-- [LinkedIn](https://www.linkedin.com/company/gocardless)
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Gocardless Agentic Access](https://apis.io/agentic-access/gocardless/gocardless-agentic-access/)
+
+#### Collections (17)
+
+Postman and Open Collection request collections.
+
+- [GoCardless REST API](https://apis.io/collections/gocardless/open-gocardless/)
+- [GoCardless REST billing_request_flows API](https://apis.io/collections/gocardless/open-gocardless-billing-request-flows-api/)
+- [GoCardless REST billing_request_flows billing_requests API](https://apis.io/collections/gocardless/open-gocardless-billing-requests-api/)
+- [GoCardless REST billing_request_flows blocks API](https://apis.io/collections/gocardless/open-gocardless-blocks-api/)
+- [GoCardless REST billing_request_flows creditor_bank_accounts API](https://apis.io/collections/gocardless/open-gocardless-creditor-bank-accounts-api/)
+- [GoCardless REST billing_request_flows creditors API](https://apis.io/collections/gocardless/open-gocardless-creditors-api/)
+- [GoCardless REST billing_request_flows customer_bank_accounts API](https://apis.io/collections/gocardless/open-gocardless-customer-bank-accounts-api/)
+- [GoCardless REST billing_request_flows customers API](https://apis.io/collections/gocardless/open-gocardless-customers-api/)
+- [GoCardless REST billing_request_flows events API](https://apis.io/collections/gocardless/open-gocardless-events-api/)
+- [GoCardless REST billing_request_flows instalment_schedules API](https://apis.io/collections/gocardless/open-gocardless-instalment-schedules-api/)
+- [GoCardless REST billing_request_flows institutions API](https://apis.io/collections/gocardless/open-gocardless-institutions-api/)
+- [GoCardless REST billing_request_flows mandates API](https://apis.io/collections/gocardless/open-gocardless-mandates-api/)
+- [GoCardless REST billing_request_flows payer_authorisations API](https://apis.io/collections/gocardless/open-gocardless-payer-authorisations-api/)
+- [GoCardless REST billing_request_flows payments API](https://apis.io/collections/gocardless/open-gocardless-payments-api/)
+- [GoCardless REST billing_request_flows payouts API](https://apis.io/collections/gocardless/open-gocardless-payouts-api/)
+- [GoCardless REST billing_request_flows refunds API](https://apis.io/collections/gocardless/open-gocardless-refunds-api/)
+- [GoCardless REST billing_request_flows subscriptions API](https://apis.io/collections/gocardless/open-gocardless-subscriptions-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [GoCardless — asyncapi rules](https://apis.io/rules/gocardless/gocardless-asyncapi-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Gocardless Authentication](https://apis.io/security/gocardless/gocardless-authentication/)
+- [Gocardless Domain Security](https://apis.io/security/gocardless/gocardless-domain-security/)
+- [Gocardless Trust Center](https://apis.io/security/gocardless/gocardless-trust-center/)
+- [Gocardless Vulnerability Disclosure](https://apis.io/security/gocardless/gocardless-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Gocardless Scopes](https://apis.io/scopes/gocardless/gocardless-scopes/)
+
+#### Plans and pricing (2)
+
+Published plans, tiers and prices.
+
+- [Gocardless Plans Pricing](https://apis.io/plans/gocardless/gocardless-plans-pricing/)
+- [Gocardless Price Estimates](https://apis.io/plans/gocardless/gocardless-price-estimates/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Gocardless Rate Limits](https://apis.io/rate-limits/gocardless/gocardless-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://gocardless.com)
 - [Documentation](https://developer.gocardless.com)
 - [Pricing](https://gocardless.com/pricing/)
-- [Sign Up](https://manage.gocardless.com/signup)
 - [Support](https://hub.gocardless.com)
-- [Status Page](https://www.gocardless-status.com)
-- [L L Ms Txt](https://developer.gocardless.com/llms.txt)
+- [Blog](https://gocardless.com/blog/)
+- [GitHub](https://github.com/gocardless)
+- [Status](https://www.gocardless-status.com)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 50.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 52.8 |
+| Contract governance | 11.4 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 45.2 |
+| Access clarity | 63.2 |
+
+**Agent readiness 51.3** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 31.5** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/gocardless/](https://apis.io/providers/gocardless/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for GoCardless: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/gocardless/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
